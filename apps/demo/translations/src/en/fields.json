@@ -131,7 +131,10 @@
     }
   },
   "rraEvidence": {
-    "label": "Please provide evidence"
+    "label": "Evidence Statement:"
+  },
+  "rraEvidence2": {
+    "label": "Evidence Statement:"
   },
   "rraName": {
     "label": "Full Name"
@@ -158,7 +161,8 @@
     }
   },
   "rraRole": {
-    "label": "Role"
+    "label": "Role",
+    "hint": "For example, Associate Developer"
   },
   "rraGrouping": {
     "label": "RRA Grouping"
@@ -178,8 +182,12 @@
       "null": "Select..."
     }
   },
+  "rraScores2": {
+    "label": "Score"
+  },
   "rraGrade": {
-    "label": "Substantive Grade"
+    "label": "Substantive Grade",
+    "hint": "For example, SEO"
   },
   "rraLevels": {
     "label": "Applying for Proficiency Level"
