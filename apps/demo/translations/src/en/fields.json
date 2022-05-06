@@ -134,7 +134,7 @@
     "label": "Evidence Statement:"
   },
   "rraEvidence2": {
-    "label": "Evidence Statement:"
+    "label": "Evidence Statement"
   },
   "rraName": {
     "label": "Full Name"
@@ -205,9 +205,9 @@
     }
   },
   "rraEvidence2": {
-    "label": "Please provide evidence"
+    "label": "Evidence Statement"
   },
   "rraSupportingDocuments2": {
-    "label": "Supporting Documents"
+    "label": "Supporting Document"
   }
 }

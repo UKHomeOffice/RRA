@@ -19,12 +19,14 @@ const sendEmail = (data, reference) => {
       grouping: data.rraGrouping,
       grade: data.rraGrade,
       level: data.rraLevels,
-      sfiaSkill1: data.sfiaSkill1,
+      skill1: data.rraSkill,
       skill1Score: data.rraScores,
       skill1Evidence: data.rraEvidence,
-      sfiaSkill2: data.sfiaSkill2,
+      skill1SupportingDocument: data.rraSupportingDocuments,
+      skill2: data.rraSkill2,
       skill2Score: data.rraScores2,
-      skill2Evidence: data.rraEvidence2
+      skill2Evidence: data.rraEvidence2,
+      skill2SupportingDocument: data.rraSupportingDocuments2
     },
     reference
   });
