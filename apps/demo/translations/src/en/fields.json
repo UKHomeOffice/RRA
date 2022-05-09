@@ -133,9 +133,6 @@
   "rraEvidence": {
     "label": "Evidence Statement:"
   },
-  "rraEvidence2": {
-    "label": "Evidence Statement"
-  },
   "rraName": {
     "label": "Full Name"
   },
@@ -185,9 +182,6 @@
     "options": {
       "null": "Select..."
     }
-  },
-  "rraScores2": {
-    "label": "Score"
   },
   "rraGrade": {
     "label": "Substantive Grade",
