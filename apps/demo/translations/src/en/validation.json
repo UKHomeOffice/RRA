@@ -49,12 +49,6 @@
   "appealStages": {
     "required": "Select an appeal stage from the list"
   },
-  "rraSkill2": {
-    "required": "Please select a skill"
-  },
-  "rraScores2": {
-    "required": "Please select a score"
-  },
   "rraName": {
     "required": "Please enter your full name"
   },

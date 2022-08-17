@@ -119,17 +119,6 @@
       "null": "Select..."
     }
   },
-  "appliedBefore": {
-    "legend": "Have you applied for RRA whilst in this role before?",
-    "options": {
-      "yes": {
-        "label": "Yes"
-      },
-      "no": {
-        "label": "No"
-      }
-    }
-  },
   "rraEvidence": {
     "label": "Evidence Statement:"
   },
