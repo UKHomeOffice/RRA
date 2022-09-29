@@ -1,0 +1,40 @@
+{
+  "name": "RRA",
+  "version": "1.0.0",
+  "description": "Service for applying for Recruitment and Retention Allowance",
+  "main": "index.js",
+  "repository": "git@github.com:UKHomeOffice/RRA.git",
+  "author": "shamiluwais <mohamed.uwais@digital.homeoffice.gov.uk>",
+  "engines": {
+    "node": "^14.17.0"
+  },
+
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "hof-build watch",
+    "dev": "hof-build watch --env",
+    "test": "yarn run test:unit && yarn run test:lint",
+    "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
+    "test:unit": "LOG_LEVEL=error nyc _mocha \"test/**/*.spec.js\"",
+    "test:acceptance": "TAGS=\"${TAGS:=@feature}\" npm run test:cucumber",
+    "test:acceptance_browser": "ACCEPTANCE_WITH_BROWSER=true TAGS=\"${TAGS:=@feature}\" yarn run test:cucumber",
+    "test:cucumber": "cucumber-js -f @cucumber/pretty-formatter \"test/_features/**/*.feature\" --require test/_features/test.setup.js --require \"test/_features/step_definitions/**/*.js\" --tags $TAGS",
+    "build": "hof-build",
+    "postinstall": "yarn run build"
+  },
+  "dependencies": {
+    "hof": "^20.0.0-beta.36",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "typeahead-aria": "^1.0.4",
+    "busboy-body-parser": "^0.3.2",
+    "device": "^0.3.12",
+    "ioredis": "^4.0.0",
+    "jimp": "^0.16.1",
+    "notifications-node-client": "^5.1.1",
+    "uuid": "^8.3.2"
+  }
+}
