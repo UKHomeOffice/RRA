@@ -3,10 +3,10 @@
 const path = require('path');
 
 const pagesPath = page => path.resolve(__dirname,
-  `./apps/demo/acceptance/pages/${page}`);
+  `./apps/rra/acceptance/pages/${page}`);
 
 module.exports = {
-  name: 'demo',
+  name: 'rra',
   include: {
     firstPage: pagesPath('first-step.js'),
     secondPage: pagesPath('second-step.js'),
