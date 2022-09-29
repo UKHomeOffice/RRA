@@ -1,5 +1,5 @@
 const emailDomainList = require('./email_domain_list.json');
-const domainFunctions = require('../apps/rra-prototype/util/domain-functions');
+const domainFunctions = require('../apps/rra/util/domain-functions');
 
 module.exports = emailDomainList;
 

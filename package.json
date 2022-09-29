@@ -6,7 +6,7 @@
   "repository": "git@github.com:UKHomeOffice/RRA.git",
   "author": "shamiluwais <mohamed.uwais@digital.homeoffice.gov.uk>",
   "engines": {
-    "node": ">=14.15.0"
+    "node": ">=14.17.0"
   },
 
   "license": "MIT",

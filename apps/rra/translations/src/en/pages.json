@@ -9,7 +9,7 @@
     "li2": "The 'Complex Form' extends off this and shows more complex components, i.e. addresses.",
     "li3": "Lastly, there is 'Build your own form'. This is just a placeholder for the moment, but we would like to create a more interactive experience for potential stakeholders so they might be able to setup a test build through the UI to see if the framework might suit their needs. For now this section redirects to our technical documentation for more in-depth information."
   },
-  "rra-prototype": {
+  "rra": {
     "header": "Recruitment and Retention Allowance (RRA) Application ",
     "title": "Recruitment and Retention Allowance",
     "subheader": "Guidance on completing the self-assessment"

@@ -1,8 +1,8 @@
 #! /bin/bash
 set -e
 
-export KUBE_NAMESPACE=hof-demo-branch
-export PROD_ENV=hof-demo
+export KUBE_NAMESPACE=rra-branch
+
 
 export SCHEMA_ACTION=$1
 

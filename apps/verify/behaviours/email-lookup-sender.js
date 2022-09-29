@@ -5,7 +5,7 @@ const notifyApiKey = config.email.notifyApiKey;
 const NotifyClient = require('notifications-node-client').NotifyClient;
 const notifyClient = new NotifyClient(notifyApiKey);
 const templateId = config.email.templateUserAuthId;
-const appPath = require('../../rra-prototype/index').baseUrl;
+const appPath = require('../../rra/index').baseUrl;
 const firstStep = '/start';
 const tokenGenerator = require('../models/save-token');
 
@@ -74,7 +74,7 @@ module.exports = superclass => class extends superclass {
     const email = req.form.values['rraEmail'];
 
     if (this.skipEmailVerification(email)) {
-      return res.redirect('/rra-prototype/start?token=skip');
+      return res.redirect('/rra/start?token=skip');
     }
 
     return super.getNextStep(req, res);

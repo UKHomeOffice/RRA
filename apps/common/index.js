@@ -8,7 +8,7 @@ module.exports = {
   },
   steps: {
     '/start': {
-      template: 'rra-prototype',
+      template: 'rra',
       next: '/verify/who-do-you-work-for'
     }
   }

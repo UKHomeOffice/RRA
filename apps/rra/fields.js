@@ -25,9 +25,7 @@ module.exports = {
     validate: 'required'
   },
   appliedBefore: {
-    legend: {
-      className: 'visuallyhidden'
-    },
+    isPageHeading: true,
     mixin: 'radio-group',
     validate: ['required'],
     options: [
@@ -72,6 +70,7 @@ module.exports = {
     }].concat(staticRraLevels.getstaticRraLevels())
   },
   lastAssessmentDate: dateComponent('lastAssessmentDate', {
+    mixin: 'input-date',
     validate: ['required', 'before', { type: 'after', arguments: ['2000'] }]
   }),
   previousScore: {

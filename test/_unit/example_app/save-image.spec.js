@@ -1,9 +1,9 @@
 'use strict';
 
 const expect = chai.expect;
-const Behaviour = require('../../../apps/rra-prototype/behaviours/save-image');
+const Behaviour = require('../../../apps/rra/behaviours/save-image');
 
-describe.only("apps/rra-prototype 'save-image' behaviour should ", () => {
+describe.only("apps/rra 'save-image' behaviour should ", () => {
   it('export a function', () => {
     expect(Behaviour).to.be.a('function');
   });

@@ -1,6 +1,14 @@
 #! /bin/bash
 set -e
 
+# export INGRESS_INTERNAL_ANNOTATIONS=$HOF_CONFIG/ingress-internal-annotations.yaml
+# export INGRESS_EXTERNAL_ANNOTATIONS=$HOF_CONFIG/ingress-external-annotations.yaml
+# export CONFIGMAP_VALUES=$HOF_CONFIG/configmap-values.yaml
+# export NGINX_SETTINGS=$HOF_CONFIG/nginx-settings.yaml
+# export FILEVAULT_NGINX_SETTINGS=$HOF_CONFIG/filevault-nginx-settings.yaml
+# export FILEVAULT_INGRESS_EXTERNAL_ANNOTATIONS=$HOF_CONFIG/filevault-ingress-external-annotations.yaml
+
+
 export SCHEMA_ACTION=migrate
 
 kd='kd --insecure-skip-tls-verify --timeout 10m --check-interval 10s'
@@ -22,13 +30,14 @@ export DRONE_SOURCE_BRANCH=$(echo $DRONE_SOURCE_BRANCH | tr '[:upper:]' '[:lower
 if [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
   $kd --delete -f kube/jobs/ms-schema-job.yml
   $kd -f kube/jobs/ms-schema-job.yml
+  $kd -f kube/file-vault/file-vault-ingress.yml # deploy ingress first so file-vault can use its tls-secret in its keycloak certs
   $kd -f kube/configmaps -f kube/certs
-  $kd -f kube/redis -f kube/app
-elif [[ ${KUBE_NAMESPACE} == ${PROD_ENV} ]]; then
-  $kd --delete -f kube/jobs/ms-schema-job.yml
-  $kd -f kube/jobs/ms-schema-job.yml
-  $kd -f kube/configmaps
-  $kd -f kube/redis -f kube/app
+  $kd -f kube/redis -f kube/file-vault -f kube/app
+elif [[ ${KUBE_NAMESPACE} == ${UAT_ENV} ]]; then
+  $kd -f kube/file-vault/file-vault-ingress.yml
+  $kd -f kube/configmaps/configmap.yml -f kube/app/service.yml
+  $kd -f kube/app/ingress-internal.yml -f kube/app/networkpolicy-internal.yml
+  $kd -f kube/redis -f kube/file-vault -f kube/app/deployment.yml
 fi
 
 sleep $READY_FOR_TEST_DELAY

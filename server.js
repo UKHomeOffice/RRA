@@ -16,7 +16,6 @@ let settings = require('./hof.settings');
 
 settings = Object.assign({}, settings, {
   routes: settings.routes.map(require),
-  behaviours: settings.behaviours.map(require),
   redis: config.redis,
   csp: config.csp
 });

@@ -1,9 +1,9 @@
 'use strict';
 
 const { expect } = require('chai');
-const Behaviour = require('../../../apps/rra-prototype/behaviours/remove-image');
+const Behaviour = require('../../../apps/rra/behaviours/remove-image');
 
-describe("apps/rra-prototype 'remove-image' behaviour should ", () => {
+describe("apps/rra 'remove-image' behaviour should ", () => {
   it('export a function', () => {
     expect(Behaviour).to.be.a('function');
   });

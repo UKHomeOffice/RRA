@@ -19,8 +19,8 @@ const validateHigherLevel = require('./behaviours/validate-higher');
 const checkEmailToken = require('./behaviours/check-email-token');
 
 module.exports = {
-  name: 'rra-prototype',
-  baseUrl: '/rra-prototype',
+  name: 'rra',
+  baseUrl: '/rra',
   pages: {
     '/token-invalid': 'token-invalid'
   },
