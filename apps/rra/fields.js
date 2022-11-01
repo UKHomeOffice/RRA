@@ -96,7 +96,7 @@ module.exports = {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
-    validate: ['required', { type: 'maxlength', arguments: 5000 }],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
   rraSkill2: {
@@ -119,7 +119,7 @@ module.exports = {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
-    validate: ['required', { type: 'maxlength', arguments: 5000 }],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
   qualifications: {
@@ -149,7 +149,7 @@ module.exports = {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
-    validate: ['required', { type: 'maxlength', arguments: 5000 }],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
   higherRraSkill2: {
@@ -172,7 +172,7 @@ module.exports = {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
-    validate: ['required', { type: 'maxlength', arguments: 5000 }],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
   cpdDescription: {

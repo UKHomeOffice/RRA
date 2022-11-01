@@ -39,7 +39,8 @@
     "required": "Please select a score"
   },
   "rraEvidence": {
-    "required": "Evidence Statement"
+    "required": "Evidence Statement",
+    "maxword": "Keep to the {{maxword}} word limit" 
   },
   "rraSkill2": {
     "required": "Please select a skill"
@@ -48,7 +49,8 @@
     "required": "Please select a score"
   },
   "rraEvidence2": {
-     "required": "Evidence Statement"
+     "required": "Evidence Statement",
+     "maxword": "Keep to the {{maxword}} word limit"
   },
 
   "currentRraLevel": {
