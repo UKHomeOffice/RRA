@@ -10,6 +10,11 @@
     "required": "Please enter a contact email address",
     "email": "Please enter a valid email address"
   },
+  "rraManagerEmail": {
+    "required": "Enter a valid email address",
+    "email": "Please enter a valid email address",
+    "invalidDomain": "You must enter a home office email address"
+  },
   "rraPassword": {
     "required": "Please enter a password"
   },

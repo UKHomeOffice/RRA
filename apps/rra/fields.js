@@ -20,6 +20,9 @@ module.exports = {
   rraEmail: {
     validate: ['required', 'email']
   },
+  rraManagerEmail: {
+    validate: ['required', 'email']
+  },
   rraPassword: {
     type:'password',
     validate: 'required'

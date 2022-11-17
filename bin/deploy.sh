@@ -17,7 +17,6 @@ if [[ $1 == 'tear_down' ]]; then
   export KUBE_NAMESPACE=$BRANCH_ENV
   export DRONE_SOURCE_BRANCH=$(cat /root/.dockersock/branch_name.txt)
 
-  $kd --delete -f kube/jobs/ms-schema-job.yml
   $kd --delete -f kube/configmaps/configmap.yml
   $kd --delete -f kube/redis -f kube/app
   echo "Torn Down UAT Branch - $APP_NAME-$DRONE_SOURCE_BRANCH.$BRANCH_ENV.homeoffice.gov.uk"
@@ -28,13 +27,11 @@ export KUBE_NAMESPACE=$1
 export DRONE_SOURCE_BRANCH=$(echo $DRONE_SOURCE_BRANCH | tr '[:upper:]' '[:lower:]' | tr '/' '-')
 
 if [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
-  $kd --delete -f kube/jobs/ms-schema-job.yml
-  $kd -f kube/jobs/ms-schema-job.yml
-  $kd -f kube/file-vault/file-vault-ingress.yml # deploy ingress first so file-vault can use its tls-secret in its keycloak certs
+  # $kd -f kube/file-vault/file-vault-ingress.yml # deploy ingress first so file-vault can use its tls-secret in its keycloak certs
   $kd -f kube/configmaps -f kube/certs
   $kd -f kube/redis -f kube/file-vault -f kube/app
 elif [[ ${KUBE_NAMESPACE} == ${UAT_ENV} ]]; then
-  $kd -f kube/file-vault/file-vault-ingress.yml
+  # $kd -f kube/file-vault/file-vault-ingress.yml
   $kd -f kube/configmaps/configmap.yml -f kube/app/service.yml
   $kd -f kube/app/ingress-internal.yml -f kube/app/networkpolicy-internal.yml
   $kd -f kube/redis -f kube/file-vault -f kube/app/deployment.yml

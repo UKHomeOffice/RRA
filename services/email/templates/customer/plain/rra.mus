@@ -1,0 +1,20 @@
+{{#data}}
+{{#t}}emails.collection.header{{/t}}
+
+{{#t}}emails.collection.paragraph-one{{/t}}
+
+{{#t}}emails.collection.paragraph-two{{/t}}
+
+{{#t}}emails.collection.paragraph-two-extra{{/t}}
+
+{{#t}}emails.collection.paragraph-three{{/t}}
+
+{{#t}}emails.collection.paragraph-four{{/t}}
+
+{{#t}}emails.collection.thanks{{/t}}
+
+{{#t}}emails.collection.signature{{/t}}
+
+If you're unsure an email is from UKVI:
+  * do not reply to it or click any links
+{{/data}}

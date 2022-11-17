@@ -12,6 +12,10 @@
     "label": "Email Address",
     "hint": "Please enter your home office email address"
   },
+  "rraManagerEmail": {
+    "label": "Manager's Email Address",
+    "hint": "Please enter your manager's home office email address"
+  },
   "rraPassword": {
     "label": "Password"
   },
