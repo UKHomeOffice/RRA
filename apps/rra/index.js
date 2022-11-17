@@ -46,7 +46,7 @@ module.exports = {
         setAppType,
         resetJourneyToSubmitRRA
       ],
-      fields: ['rraName', 'rraAdelphiNumber','rraFunction', 'rraEmail'],
+      fields: ['rraName', 'rraAdelphiNumber','rraFunction', 'rraEmail', 'rraManagerEmail'],
       forks: [{
         target: '/higherProfessionDetails',
         condition: req => {
@@ -54,7 +54,6 @@ module.exports = {
         }
       }],
       next: '/professionDetails'
-      // continueOnEdit: true
     },
     '/professionDetails': {
       fields: ['rraRole', 'rraGrouping', 'rraGrade', 'rraLevels'],
@@ -127,7 +126,6 @@ module.exports = {
       continueOnEdit: true
     },
     '/rraSupportingDocumentsUploadConfirm': {
-      // backLink: '',
       fields: [
         'rraSupportingDocumentsUploadMore',
         'anotherRraSupportingDocuments'
