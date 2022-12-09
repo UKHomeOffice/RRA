@@ -159,7 +159,7 @@ steps:
         include:
           - main
           - feature/*
-      event: pull_request
+      event: [pull_request, push]
       
   # Deploy to Master UAT environment
   # - name: deploy_to_uat
