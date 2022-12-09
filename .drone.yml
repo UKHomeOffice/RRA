@@ -12,6 +12,7 @@ environment:
   IMAGE_URL: quay.io/ukhomeofficedigital
   IMAGE_REPO: rra
   GIT_REPO: UKHomeOffice/RRA
+  HOF_CONFIG: hof-services-config/Recruitment-Retention-Allowance
   PRODUCTION_URL: www.recruitment-retention-allowance.homeoffice.gov.uk
   NON_PROD_AVAILABILITY: Mon-Sun 08:00-23:00 Europe/London
   READY_FOR_TEST_DELAY: 20s
@@ -55,8 +56,8 @@ steps:
     when:
       branch:
         include:
-        - main
-        - feature/*
+          - main
+          - feature/*
       event: [push, pull_request]
 
 # steps:
@@ -99,7 +100,11 @@ steps:
       - name: dockersock
         path: /var/run
     when:
-      branch: main
+      # branch: main
+      branch:
+        include:
+          - main
+          - feature/*
       event: [push, pull_request]
 
   - name: image_to_quay
