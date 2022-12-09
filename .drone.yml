@@ -5,12 +5,14 @@ type: kubernetes
 
 environment:
   APP_NAME: rra
-  BRANCH_ENV: rra-branch
-  UAT_ENV: rra-uat
+  PROD_ENV: rra
+  STG_ENV: rra-stg
+  BRANCH_ENV: sas-rra-branch
+  UAT_ENV: sas-rra-uat
   IMAGE_URL: quay.io/ukhomeofficedigital
   IMAGE_REPO: rra
   GIT_REPO: UKHomeOffice/RRA
-  # HOF_CONFIG: hof-services-config/RRA
+  PRODUCTION_URL: www.recruitment-retention-allowance.homeoffice.gov.uk
   NON_PROD_AVAILABILITY: Mon-Sun 08:00-23:00 Europe/London
   READY_FOR_TEST_DELAY: 20s
 
@@ -28,40 +30,57 @@ linting: &linting
   commands:
     - yarn run test:lint
 
-# unit_tests: &unit_tests
-#   pull: if-not-exists
-#   image: node:14
-#   environment:
-#     NOTIFY_KEY: USE_MOCK
-#   commands:
-#     - yarn run test:unit
+unit_tests: &unit_tests
+  pull: if-not-exists
+  image: node:14
+  environment:
+    NOTIFY_KEY: USE_MOCK
+  commands:
+    - yarn run test:unit
 
-# acceptance_tests: &acceptance_tests
-#   pull: if-not-exists
-#   image: mcr.microsoft.com/playwright:v1.12.3-focal
+acceptance_tests: &acceptance_tests
+  pull: if-not-exists
+  image: mcr.microsoft.com/playwright:v1.12.3-focal
 
 steps:
-  - name: setup_deploy
-    pull: if-not-exists
-    image: node:14
+  - name: clone_repos
+    image: alpine/git
     environment:
-      NOTIFY_KEY: USE_MOCK
+      DRONE_GIT_USERNAME:
+        from_secret: drone_git_username
+      DRONE_GIT_TOKEN:
+        from_secret: drone_git_token
     commands:
-      - yarn install --frozen-lockfile
-      - yarn run postinstall
+      - git clone https://$${DRONE_GIT_USERNAME}:$${DRONE_GIT_TOKEN}@github.com/UKHomeOfficeForms/hof-services-config.git
     when:
       branch:
         include:
         - main
-      event: push
+        - feature/*
+      event: [push, pull_request]
 
-  - name: linting_deploy
-    <<: *linting
-    when:
-      branch:
-        include:
-          - main
-      event: push
+# steps:
+#   - name: setup_deploy
+#     pull: if-not-exists
+#     image: node:14
+#     environment:
+#       NOTIFY_KEY: USE_MOCK
+#     commands:
+#       - yarn install --frozen-lockfile
+#       - yarn run postinstall
+#     when:
+#       branch:
+#         include:
+#         - main
+#       event: push
+
+#   - name: linting_deploy
+#     <<: *linting
+#     when:
+#       branch:
+#         include:
+#           - main
+#       event: push
 
   # - name: unit_tests_deploy
   #   <<: *unit_tests
@@ -94,7 +113,11 @@ steps:
     - docker tag $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
     - docker push $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
     when:
-      branch: main
+      # branch: main
+      branch:
+        include:
+          - main
+          - feature/*
       event: [push, pull_request]
 
   # Deploy to pull request UAT environment
@@ -110,7 +133,11 @@ steps:
     commands:
       - bin/deploy.sh $${BRANCH_ENV}
     when:
-      branch: main
+      # branch: main
+      branch:
+        include:
+          - main
+          - feature/*
       event: pull_request
       
   # Deploy to Master UAT environment
@@ -121,7 +148,7 @@ steps:
       KUBE_SERVER:
         from_secret: kube_server_dev
       KUBE_TOKEN:
-        from_secret: kube_token_sas_dev
+        from_secret: kube_token_dev
     commands:
       - bin/deploy.sh $${UAT_ENV}
     when:
