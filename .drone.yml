@@ -73,7 +73,7 @@ steps:
       branch:
         include:
         - main
-        - feature/*
+        # - feature/*
       event: [push, pull_request]
 
 # steps:
@@ -120,7 +120,7 @@ steps:
       branch:
         include:
           - main
-          - feature/*
+          # - feature/*
       event: [push, pull_request]
 
   - name: image_to_quay
@@ -137,7 +137,7 @@ steps:
       branch:
         include:
           - main
-          - feature/*
+          # - feature/*
       event: [push, pull_request]
 
   # Deploy to pull request UAT environment
@@ -157,7 +157,7 @@ steps:
       branch:
         include:
           - main
-          - feature/*
+          # - feature/*
       event: [pull_request, push]
       
   # Deploy to Master UAT environment
