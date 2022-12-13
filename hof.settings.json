@@ -1,0 +1,13 @@
+{
+  "appName": "RRA",
+  "theme": "govUK",
+  "routes": [
+    "./apps/common",
+    "./apps/rra",
+    "./apps/verify"
+  ],
+  "session": {
+    "name": "rra.hof.sid"
+  },
+  "getAccessibility": true
+}

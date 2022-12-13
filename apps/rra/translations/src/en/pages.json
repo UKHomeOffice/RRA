@@ -1,0 +1,106 @@
+{
+  "rra": {
+    "header": "Recruitment and Retention Allowance (RRA) Application ",
+    "title": "Recruitment and Retention Allowance",
+    "subheader": "Guidance on completing the self-assessment"
+  },
+  "token-invalid": {
+    "header": "That link has expired"
+  },
+  "rraLogin": {
+    "header": "Login in to your RRA account"
+  },
+  "personalDetails": {
+    "header": "Personal Details"
+  },
+  "professionDetails": {
+    "header": "Profession Details"
+  },
+  "higherProfessionDetails": {
+    "header": "Higher Rate Profession Details"
+  },
+  "skill": {
+    "header": "Skill 1"
+  },
+  "skill1": {
+    "header": "Skill 1"
+  },
+  "skill2": {
+    "header": "Skill 2"
+  },
+  "qualifications": {
+    "header": "Qualifications"
+  },
+  "lastAssessmentDate": {
+    "header": "What was the date of your last RRA assessment?"
+  },
+  "previousScore": {
+    "header": "What was the previous score achieved in the last assessment?"
+  },
+  "higherSkill1": {
+    "header": "Skill 1",
+    "intro": "Use the relevant ready-reckoner to help you understand your how your proficiency level has developed since your last assessment before writing the self-assessment. You should clearly show how your professional proficiency has developed since your last RRA application."
+  },
+  "higherSkill2": {
+    "header": "Skill 2",
+    "intro": "Use the relevant ready-reckoner to help you understand your how your proficiency level has developed since your last assessment before writing the self-assessment. You should clearly show how your professional proficiency has developed since your last RRA application."
+
+  },
+  "cpd":{
+    "header": "Professional Development"
+  },
+  "rraSupportingDocumentsUpload": {
+    "header": "Do you want to upload a supporting document?"
+  },
+  "rraSupportingDocumentsUploadConfirm": {
+    "header": "Do you want to add another supporting document?"
+  },
+  "totalScore": {
+    "header": "Total Score"
+  },
+  "confirm": {
+    "header": "Check your answers before submitting your application.",
+    "undefined": "None given",
+    "sections": {
+      "applicantsDetails": {
+        "header": "Applicant's details"
+      },
+      "contactDetails": {
+        "header": "Contact details"
+      },
+      "personalDetails": {
+        "header": "Personal Details"
+      },
+      "appliedBefore": {
+        "header": "Application Details"
+      },
+      "professionDetails": {
+        "header": "Profession Details"
+      },
+      "higherProfessionDetails": {
+        "header": "Higher Rate Profession Details"
+      },
+      "skill1": {
+        "header": "Skill 1"
+      },
+      "skill2": {
+        "header": "Skill 2"
+      },
+      "higherSkill1": {
+        "header": "Skill 1"
+      },
+      "higherSkill2": {
+        "header": "Skill 2"
+      },
+      "supportingDocuments": {
+        "header": "Supporting Documents"
+      }
+    }
+  },
+  "confirmation": {
+    "title": "Application complete",
+    "alert": "Application complete",
+    "subheader": "Thank you",
+    "content": "You have completed an example of a form built using HOF."
+  }
+}
