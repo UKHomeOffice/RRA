@@ -187,7 +187,7 @@ steps:
       branch:
         include:
           - main
-          - feature/*
+          # - feature/*
           - fix/*
       event: pull_request
 
@@ -197,7 +197,7 @@ steps:
       branch:
         include:
           - main
-          - feature/*
+          # - feature/*
           - fix/*
       event: pull_request
 
