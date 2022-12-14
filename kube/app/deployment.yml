@@ -60,7 +60,7 @@ spec:
                   name: session-secret
                   key: session-secret
             {{ end }}
-             - name: NOTIFY_KEY
+            - name: NOTIFY_KEY
               valueFrom:
                 secretKeyRef:
                   name: notify-key
