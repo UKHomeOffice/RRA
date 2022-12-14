@@ -57,7 +57,7 @@ steps:
       branch:
         include:
         - main
-        # - feature/*
+        - feature/*
       event: [push, pull_request]
 
 # steps:
@@ -104,7 +104,7 @@ steps:
       branch:
         include:
           - main
-          # - feature/*
+          - feature/*
       event: [push, pull_request]
 
   - name: image_to_quay
@@ -120,8 +120,8 @@ steps:
     when:
       branch:
         include:
-          # - main
-          # - feature/*
+          - main
+          - feature/*
       event: [push, pull_request]
 
   # Deploy to pull request UAT environment
@@ -141,10 +141,10 @@ steps:
       branch:
         include:
           - main
-          # - feature/*
+          - feature/*
       event: [pull_request, push]
 
-  Deploy to Master UAT environment
+  # Deploy to Master UAT environment
   - name: deploy_to_uat
     pull: if-not-exists
     image: quay.io/ukhomeofficedigital/kd:v1.14.0
@@ -171,7 +171,7 @@ steps:
       branch:
         include:
           - main
-          # - feature/*
+          - feature/*
           - fix/*
       event: pull_request
 
@@ -181,7 +181,7 @@ steps:
       branch:
         include:
           - main
-          # - feature/*
+          - feature/*
           - fix/*
       event: pull_request
 
