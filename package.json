@@ -8,7 +8,6 @@
   "engines": {
     "node": ">=14.17.0"
   },
-
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -25,16 +24,16 @@
     "postinstall": "yarn run build"
   },
   "dependencies": {
-    "hof": "^20.0.0",
+    "busboy-body-parser": "^0.3.2",
+    "device": "^0.3.12",
+    "hof": "^20.1.17",
+    "ioredis": "^4.0.0",
+    "jimp": "^0.16.1",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "typeahead-aria": "^1.0.4",
-    "busboy-body-parser": "^0.3.2",
-    "device": "^0.3.12",
-    "ioredis": "^4.0.0",
-    "jimp": "^0.16.1",
     "notifications-node-client": "^5.1.1",
+    "typeahead-aria": "^1.0.4",
     "uuid": "^8.3.2"
   }
 }

@@ -60,6 +60,11 @@ spec:
                   name: session-secret
                   key: session-secret
             {{ end }}
+             - name: NOTIFY_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: notify-key
+                  key: notify-key
           {{ if not (eq .KUBE_NAMESPACE .BRANCH_ENV) }}
           livenessProbe:
             httpGet:
