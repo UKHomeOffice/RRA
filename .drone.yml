@@ -73,7 +73,7 @@ steps:
       branch:
         include:
         - main
-        # - feature/*
+        - feature/*
       event: [push, pull_request]
 
 # steps:
@@ -159,7 +159,7 @@ steps:
           - main
           # - feature/*
       event: [pull_request, push]
-      
+
   # Deploy to Master UAT environment
   # - name: deploy_to_uat
   #   pull: if-not-exists
