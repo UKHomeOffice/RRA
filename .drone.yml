@@ -141,7 +141,7 @@ steps:
       branch:
         include:
           - main
-          - feature/*
+          # - feature/*
       event: [pull_request, push]
 
   # Deploy to Master UAT environment
