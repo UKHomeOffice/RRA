@@ -57,7 +57,7 @@ steps:
       branch:
         include:
         - main
-        - feature/*
+        # - feature/*
       event: [push, pull_request]
 
 # steps:
