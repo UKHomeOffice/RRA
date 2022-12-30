@@ -15,6 +15,7 @@ metadata:
     name: {{ .APP_NAME }}
     {{ end }}
 data:
+  {{ file .CONFIGMAP_VALUES | indent 2 }}
   {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
   NODE_ENV: development
   {{ else }}
