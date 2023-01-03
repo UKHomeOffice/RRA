@@ -4,6 +4,8 @@ const config = require('../../../config');
 const apiKey = config.email.notifyApiKey;
 const NotifyClient = require('notifications-node-client').NotifyClient;
 const notifyClient = new NotifyClient(apiKey);
+const notifyTemplate= config.email.notifyTemplate;
+const notifyHigherTemplate = config.email.notifyHigherTemplate;
 
 const sendEmail = (data, reference) => {
   let subject;
@@ -16,8 +18,9 @@ const sendEmail = (data, reference) => {
 
   if (data.appliedBefore === 'no') {
     subject = 'RRA - ' + data.rraName + ' - ' + data.rraGrouping + ' - ' + data.rraLevels + ' - 1st App';
-
-    return notifyClient.sendEmail(config.email.notifyTemplate, config.email.caseworker, {
+    console.log('notifyTemplate' + notifyTemplate);
+    console.log('apiKey' + apiKey);
+    return notifyClient.sendEmail(notifyTemplate, config.email.caseworker, {
       personalisation: {
         subject: subject,
         name: data.rraName,
@@ -41,8 +44,8 @@ const sendEmail = (data, reference) => {
     });
   }
   subject = 'RRA - ' + data.rraName + ' - ' + data.rraGrouping + ' - ' + data.rraLevels + ' - Higher Rate';
-
-  return notifyClient.sendEmail(config.email.notifyHigherTemplate, config.email.caseworker, {
+  console.log('notifyHigherTemplate' + notifyHigherTemplate);
+  return notifyClient.sendEmail(notifyHigherTemplate, config.email.caseworker, {
     personalisation: {
       subject: subject,
       name: data.rraName,
