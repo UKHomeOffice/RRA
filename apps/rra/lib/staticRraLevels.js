@@ -5,6 +5,9 @@
 module.exports = {
   getstaticRraLevels: function () {
     return [
+      { value: 'Baseline',
+        label: 'Baseline'
+      },
       { value: 'Practitioner',
         label: 'Practitioner'
       },

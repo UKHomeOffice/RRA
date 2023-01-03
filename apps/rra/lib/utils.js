@@ -24,7 +24,6 @@ const sendEmail = (data, reference) => {
         number: data.rraAdelphiNumber,
         portfolio: data.rraFunction,
         email: data.rraEmail,
-        appliedBefore: data.appliedBefore,
         role: data.rraRole,
         grouping: data.rraGrouping,
         grade: data.rraGrade,
@@ -35,7 +34,8 @@ const sendEmail = (data, reference) => {
         skill2: data.rraSkill2,
         skill2Score: data.rraScores2,
         skill2Evidence: data.rraEvidence2,
-        supportingDocuments: document
+        supportingDocuments: document,
+        formId: 'test'
       },
       reference
     });
@@ -49,7 +49,6 @@ const sendEmail = (data, reference) => {
       number: data.rraAdelphiNumber,
       portfolio: data.rraFunction,
       email: data.rraEmail,
-      appliedBefore: data.appliedBefore,
       role: data.rraRole,
       grouping: data.rraGrouping,
       grade: data.rraGrade,

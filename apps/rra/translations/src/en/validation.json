@@ -3,8 +3,8 @@
     "required": "Please enter your full name"
   },
   "rraAdelphiNumber": {
-    "required": "Please enter your Adelphi Number",
-    "numeric": "Your Adelphi Number should contain numbers only"
+    "required": "Please enter your Employment Number",
+    "numeric": "Your Employment Number should contain numbers only"
   },
   "rraEmail": {
     "required": "Please enter a contact email address",
@@ -45,7 +45,7 @@
   },
   "rraEvidence": {
     "required": "Evidence Statement",
-    "maxword": "Keep to the {{maxword}} word limit" 
+    "maxword": "Keep to the {{maxword}} word limit"
   },
   "rraSkill2": {
     "required": "Please select a skill"
