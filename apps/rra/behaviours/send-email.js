@@ -18,8 +18,11 @@ module.exports = superclass => class Submit extends superclass {
   }
 
   static handleError(req, next, reference, err, shouldLog) {
+    console.log('ERRORS ' + JSON.stringify(err.response.data.errors))
     if (shouldLog) {
+      console.log('ERROR ' + JSON.stringify(err.response.data.errors[0]))
       req.log('error', 'Error sending email to RRA address', `reference=${reference}`, err);
+      req.log('error', 'Error sending email to RRA address', `reference=${reference}`, err.response.data.errors[0]);
     }
     err.formNotSubmitted = true;
     return next(err);
