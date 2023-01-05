@@ -19,6 +19,7 @@ module.exports = superclass => class Submit extends superclass {
 
   static handleError(req, next, reference, err, shouldLog) {
     if (shouldLog) {
+      console.log('GOV NOTIFY ERROR ' + JSON.stringify(err.response.data.errors[0]))
       req.log('error', 'Error sending email to RRA address', `reference=${reference}`, err);
     }
     err.formNotSubmitted = true;
