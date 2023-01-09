@@ -48,7 +48,7 @@ module.exports = {
         resetJourneyToSubmitRRA,
         validateDomain
       ],
-      fields: ['rraName', 'rraAdelphiNumber','rraFunction', 'rraEmail', 'rraManagerEmail'],
+      fields: ['rraName', 'rraEmployeeNumber','rraFunction', 'rraEmail', 'rraManagerEmail'],
       forks: [{
         target: '/higherProfessionDetails',
         condition: req => {
@@ -60,15 +60,41 @@ module.exports = {
     '/professionDetails': {
       fields: ['rraRole', 'rraGrouping', 'rraGrade', 'rraLevels'],
       next: '/skill1',
+      continueOnEdit: true
     },
     '/skill1': {
       behaviours: [SkillBehaviour],
       fields: ['rraSkill', 'rraScores', 'rraEvidence'],
-      next: '/skill2'
+      next: '/skill2',
+      continueOnEdit: true
     },
     '/skill2': {
       behaviours: [SkillBehaviour],
       fields: ['rraSkill2', 'rraScores2', 'rraEvidence2'],
+      next: '/skill3',
+      continueOnEdit: true
+    },
+    '/skill3': {
+      behaviours: [SkillBehaviour],
+      fields: ['rraSkill3', 'rraScores3', 'rraEvidence3'],
+      next: '/skill4',
+      continueOnEdit: true
+    },
+    '/skill4': {
+      behaviours: [SkillBehaviour],
+      fields: ['rraSkill4', 'rraScores4', 'rraEvidence4'],
+      next: '/skill5',
+      continueOnEdit: true
+    },
+    '/skill5': {
+      behaviours: [SkillBehaviour],
+      fields: ['rraSkill5', 'rraScores5', 'rraEvidence5'],
+      next: '/skill6',
+      continueOnEdit: true
+    },
+    '/skill6': {
+      behaviours: [SkillBehaviour],
+      fields: ['rraSkill6', 'rraScores6', 'rraEvidence6'],
       next: '/qualifications'
     },
     '/qualifications': {
@@ -77,25 +103,53 @@ module.exports = {
     },
     '/higherProfessionDetails': {
       behaviours: [validateHigherLevel],
-      fields: ['rraRole', 'rraGrouping', 'rraGrade','currentRraLevel', 'rraLevels'],
+      fields: ['higherRraRole', 'higherRraGrouping', 'higherRraGrade','currentRraLevel', 'higherRraLevels'],
       next: '/lastAssessmentDate',
+      continueOnEdit: true 
     },
     '/lastAssessmentDate':{
       fields: ['lastAssessmentDate'],
       next: '/previousScore',
+      continueOnEdit: true 
     },
     '/previousScore': {
       fields: [ 'previousScore'],
       next: '/higherSkill1',
+      continueOnEdit: true 
     },
     '/higherSkill1': {
       behaviours: [higherSkillBehaviour],
       fields: ['higherRraSkill', 'higherRraScores', 'higherRraEvidence'],
-      next: '/higherSkill2'
+      next: '/higherSkill2',
+      continueOnEdit: true
     },
     '/higherSkill2': {
       behaviours: [higherSkillBehaviour],
       fields: ['higherRraSkill2', 'higherRraScores2', 'higherRraEvidence2'],
+      next: '/higherSkill3',
+      continueOnEdit: true
+    },
+    '/higherSkill3': {
+      behaviours: [higherSkillBehaviour],
+      fields: ['higherRraSkill3', 'higherRraScores3', 'higherRraEvidence3'],
+      next: '/higherSkill4',
+      continueOnEdit: true
+    },
+    '/higherSkill4': {
+      behaviours: [higherSkillBehaviour],
+      fields: ['higherRraSkill4', 'higherRraScores4', 'higherRraEvidence4'],
+      next: '/higherSkill5',
+      continueOnEdit: true
+    },
+    '/higherSkill5': {
+      behaviours: [higherSkillBehaviour],
+      fields: ['higherRraSkill5', 'higherRraScores5', 'higherRraEvidence5'],
+      next: '/higherSkill6',
+      continueOnEdit: true
+    },
+    '/higherSkill6': {
+      behaviours: [higherSkillBehaviour],
+      fields: ['higherRraSkill6', 'higherRraScores6', 'higherRraEvidence6'],
       next: '/cpd'
     },
     '/cpd': {
