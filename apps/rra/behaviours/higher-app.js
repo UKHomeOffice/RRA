@@ -10,7 +10,7 @@ module.exports = superclass => class extends superclass {
     req.sessionModel.set('higher-app', higherRateApp);
 
     // this updates fields and change links for the in-progress check your answers page
-    // when accessing a case from the reports dashboard
+
     if (higherRateApp) {
       req.sessionModel.set('appliedBefore', 'yes');
       req.sessionModel.set('is-higher', true);
