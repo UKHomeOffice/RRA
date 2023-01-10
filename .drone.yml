@@ -57,7 +57,7 @@ steps:
       branch:
         include:
         - main
-        # - feature/*
+        - feature/*
       event: [push, pull_request]
 
 # steps:
@@ -104,7 +104,7 @@ steps:
       branch:
         include:
           - main
-          # - feature/*
+          - feature/*
       event: [push, pull_request]
 
   - name: image_to_quay
@@ -121,7 +121,7 @@ steps:
       branch:
         include:
           - main
-          # - feature/*
+          - feature/*
       event: [push, pull_request]
 
   # # Deploy to pull request UAT environment
@@ -155,24 +155,27 @@ steps:
     commands:
       - bin/deploy.sh $${UAT_ENV}
     when:
-      branch: main
-      event: [pull_request, push]
-
-  - name: setup_branch
-    pull: if-not-exists
-    image: node:14
-    environment:
-      NOTIFY_KEY: USE_MOCK
-    commands:
-      - yarn install --frozen-lockfile
-      - yarn run postinstall
-    when:
       branch:
         include:
           - main
           - feature/*
-          - fix/*
-      event: pull_request
+      event: [pull_request, push]
+
+  # - name: setup_branch
+  #   pull: if-not-exists
+  #   image: node:14
+  #   environment:
+  #     NOTIFY_KEY: USE_MOCK
+  #   commands:
+  #     - yarn install --frozen-lockfile
+  #     - yarn run postinstall
+  #   when:
+  #     branch:
+  #       include:
+  #         - main
+  #         - feature/*
+  #         - fix/*
+  #     event: pull_request
 
   - name: linting_branch
     <<: *linting
