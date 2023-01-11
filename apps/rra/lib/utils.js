@@ -34,8 +34,8 @@ const sendEmail = (data, reference) => {
         skill2: data.rraSkill2,
         skill2Score: data.rraScores2,
         skill2Evidence: data.rraEvidence2,
-        supportingDocuments: document,
-        formId: 'tests'
+        supportingDocuments: data.images[0].url,
+        formId: 'link to pdf'
       },
       reference
     });
@@ -63,7 +63,7 @@ const sendEmail = (data, reference) => {
       higherSkill2Score: data.higherRraScores2,
       higherSkill2Evidence: data.higherRraEvidence2,
       professionalDev: data.cpdDescription,
-      supportingDocuments: document
+      supportingDocuments: data.images[0].url
     },
     reference
   });

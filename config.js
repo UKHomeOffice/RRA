@@ -2,6 +2,7 @@
 
 /* eslint no-process-env: 0 */
 const env = process.env.NODE_ENV || 'production';
+const localhost = () => `${process.env.LISTEN_HOST || '0.0.0.0'}:${process.env.PORT || 8080}`;
 const useMocks = process.env.USE_MOCKS === 'true' || !env;
 
 module.exports = {
@@ -10,13 +11,13 @@ module.exports = {
     imgSrc: ['data:']
   },
   useMocks: useMocks,
-  upload: {
+/*   upload: {
     maxFileSize: '100mb',
     // if mocks set use file service served up by app otherwise use filevault's port 3000
     hostname: !useMocks && process.env.FILE_VAULT_URL ?
       process.env.FILE_VAULT_URL :
       `http://localhost:${useMocks ? (process.env.PORT || 8080) : 3000}/file`
-  },
+  }, */
   email: {
     caseworker: process.env.CASEWORKER_EMAIL,
     notifyApiKey: process.env.NOTIFY_KEY,
@@ -39,6 +40,13 @@ module.exports = {
     host: process.env.REDIS_HOST || '127.0.0.1'
   },
   skipEmail: process.env.SKIP_EMAIL,
+  upload: {
+    maxFileSize: '100mb',
+    hostname: !useMocks && process.env.FILE_VAULT_URL ?
+      process.env.FILE_VAULT_URL :
+      `http://${localhost()}/api/image-upload`
+
+  },
   keycloak: {
     token: process.env.KEYCLOAK_TOKEN_URL,
     username: process.env.KEYCLOAK_USERNAME,
