@@ -24,6 +24,7 @@
     "postinstall": "yarn run build"
   },
   "dependencies": {
+    "accessible-autocomplete": "^2.0.2",
     "busboy-body-parser": "^0.3.2",
     "device": "^0.3.12",
     "hof": "^20.1.17",

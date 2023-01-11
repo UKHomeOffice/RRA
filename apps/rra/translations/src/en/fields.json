@@ -2,7 +2,7 @@
   "rraName": {
     "label": "Full Name"
   },
-  "rraAdelphiNumber": {
+  "rraEmployeeNumber": {
     "label":"Employment Number"
   },
   "rraFunction": {
@@ -38,7 +38,8 @@
     "label": "RRA Grouping",
     "options": {
       "null": "Select..."
-    }
+    },
+    "hint": "Start to type and options will appear"
   },
   "rraGrade": {
     "label": "Substantive Grade",
@@ -95,8 +96,92 @@
   "rraEvidence2": {
     "label": "Evidence Statement"
   },
+  "rraSkill3": {
+    "label": "Skill",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "rraScores3": {
+    "label": "Score",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "rraEvidence3": {
+    "label": "Evidence Statement"
+  },
+  "rraSkill4":{
+    "label": "Skill",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "rraScores4": {
+    "label": "Score",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "rraEvidence4": {
+    "label": "Evidence Statement"
+  },
+  "rraSkill5": {
+    "label": "Skill",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "rraScores5": {
+    "label": "Score",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "rraEvidence5": {
+    "label": "Evidence Statement"
+  },
+  "rraSkill6":{
+    "label": "Skill",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "rraScores6": {
+    "label": "Score",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "rraEvidence6": {
+    "label": "Evidence Statement"
+  },
   "qualifications": {
     "label": "Please include any qualifications"
+  },
+  "higherRraRole": {
+    "label": "Role",
+    "hint": "For example, Associate Developer"
+  },
+  "higherRraGrouping": {
+    "label": "RRA Grouping",
+    "options": {
+      "null": "Select..."
+    },
+    "hint": "Start to type and options will appear"
+  },
+  "higherRraGrade": {
+    "label": "Substantive Grade",
+    "hint": "For example, SEO",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "higherRraLevels": {
+    "label": "Applying for Proficiency Level",
+    "options": {
+      "null": "Select..."
+    }
   },
   "higherRraSkill": {
     "label": "Skill",
@@ -126,6 +211,66 @@
     }
   },
   "higherRraEvidence2": {
+    "label": "Statement of Professional Proficiency Development"
+  },
+  "higherRraSkill3": {
+    "label": "Skill",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "higherRraScores3": {
+    "label": "Score",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "higherRraEvidence3": {
+    "label": "Statement of Professional Proficiency Development"
+  },
+  "higherRraSkill4":{
+    "label": "Skill",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "higherRraScores4": {
+    "label": "Score",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "higherRraEvidence4": {
+    "label": "Statement of Professional Proficiency Development"
+  },
+  "higherRraSkill5": {
+    "label": "Skill",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "higherRraScores5": {
+    "label": "Score",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "higherRraEvidence5": {
+    "label": "Statement of Professional Proficiency Development"
+  },
+  "higherRraSkill6":{
+    "label": "Skill",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "higherRraScores6": {
+    "label": "Score",
+    "options": {
+      "null": "Select..."
+    }
+  },
+  "higherRraEvidence6": {
     "label": "Statement of Professional Proficiency Development"
   },
   "cpdDescription": {

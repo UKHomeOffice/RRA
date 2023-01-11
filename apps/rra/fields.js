@@ -14,7 +14,7 @@ module.exports = {
   rraName: {
     validate: 'required'
   },
-  rraAdelphiNumber: {
+  rraEmployeeNumber: {
     validate: ['required', 'numeric']
   },
   rraEmail: {
@@ -51,6 +51,7 @@ module.exports = {
   rraGrouping: {
     mixin: 'select',
     validate: ['required'],
+    className: ['typeahead', 'js-hidden'],
     options: [{
       value: '',
       label: 'fields.rraGrouping.options.null'
@@ -62,7 +63,33 @@ module.exports = {
     options: [{
       value: '',
       label: 'fields.rraLevels.options.null'
-    }].concat(staticRraLevels.getstaticRraLevels())
+    }].concat(staticRraLevels.getstaticApplyRraLevels())
+  },
+  higherRraGrade: {
+    mixin: 'select',
+    validate: 'required',
+    options:
+      [{
+        value: ' ',
+        label: 'fields.higherRraGrade.options.null'
+      }].concat(staticRraGrades.getstaticRraGrades())
+  },
+  higherRraGrouping: {
+    mixin: 'select',
+    validate: ['required'],
+    className: ['typeahead', 'js-hidden'],
+    options: [{
+      value: '',
+      label: 'fields.higherRraGrouping.options.null'
+    }].concat(staticRraGrouping.getstaticRraGrouping())
+  },
+  higherRraLevels: {
+    mixin: 'select',
+    validate: ['required',],
+    options: [{
+      value: '',
+      label: 'fields.higherRraLevels.options.null'
+    }].concat(staticRraLevels.getstaticApplyRraLevels())
   },
   currentRraLevel: {
     mixin: 'select',
@@ -70,7 +97,7 @@ module.exports = {
     options: [{
       value: '',
       label: 'fields.currentRraLevel.options.null'
-    }].concat(staticRraLevels.getstaticRraLevels())
+    }].concat(staticRraLevels.getstaticCurrentRraLevels())
   },
   lastAssessmentDate: dateComponent('lastAssessmentDate', {
     mixin: 'input-date',
@@ -125,6 +152,98 @@ module.exports = {
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
+  rraSkill3: {
+    mixin: 'select',
+    validate: 'required',
+    options: [{
+      value: ' ',
+      label: 'fields.rraSkill3.options.null'
+    }].concat(staticSfiaSkills)
+  },
+  rraScores3: {
+    mixin: 'select',
+    validate: ['required'],
+    options: [{
+      value: '',
+      label: 'fields.rraScores3.options.null'
+    }].concat(staticRraScores.getstaticRraScores())
+  },
+  rraEvidence3: {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
+    attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
+  },
+  rraSkill4: {
+    mixin: 'select',
+    validate: 'required',
+    options: [{
+      value: ' ',
+      label: 'fields.rraSkill4.options.null'
+    }].concat(staticSfiaSkills)
+  },
+  rraScores4: {
+    mixin: 'select',
+    validate: ['required'],
+    options: [{
+      value: '',
+      label: 'fields.rraScores4.options.null'
+    }].concat(staticRraScores.getstaticRraScores())
+  },
+  rraEvidence4: {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
+    attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
+  },
+  rraSkill5: {
+    mixin: 'select',
+    validate: 'required',
+    options: [{
+      value: ' ',
+      label: 'fields.rraSkill5.options.null'
+    }].concat(staticSfiaSkills)
+  },
+  rraScores5: {
+    mixin: 'select',
+    validate: ['required'],
+    options: [{
+      value: '',
+      label: 'fields.rraScores5.options.null'
+    }].concat(staticRraScores.getstaticRraScores())
+  },
+  rraEvidence5: {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
+    attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
+  },
+  rraSkill6: {
+    mixin: 'select',
+    validate: 'required',
+    options: [{
+      value: ' ',
+      label: 'fields.rraSkill6.options.null'
+    }].concat(staticSfiaSkills)
+  },
+  rraScores6: {
+    mixin: 'select',
+    validate: ['required'],
+    options: [{
+      value: '',
+      label: 'fields.rraScores6.options.null'
+    }].concat(staticRraScores.getstaticRraScores())
+  },
+  rraEvidence6: {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
+    attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
+  },
   qualifications: {
     mixin: 'textarea',
     'ignore-defaults': true,
@@ -172,6 +291,98 @@ module.exports = {
     }].concat(staticRraScores.getstaticRraScores())
   },
   higherRraEvidence2: {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
+    attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
+  },
+  higherRraSkill3: {
+    mixin: 'select',
+    validate: 'required',
+    options: [{
+      value: ' ',
+      label: 'fields.higherRraSkill3.options.null'
+    }].concat(staticSfiaSkills)
+  },
+  higherRraScores3: {
+    mixin: 'select',
+    validate: ['required'],
+    options: [{
+      value: '',
+      label: 'fields.higherRraScores3.options.null'
+    }].concat(staticRraScores.getstaticRraScores())
+  },
+  higherRraEvidence3: {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
+    attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
+  },
+  higherRraSkill4: {
+    mixin: 'select',
+    validate: 'required',
+    options: [{
+      value: ' ',
+      label: 'fields.higherRraSkill4.options.null'
+    }].concat(staticSfiaSkills)
+  },
+  higherRraScores4: {
+    mixin: 'select',
+    validate: ['required'],
+    options: [{
+      value: '',
+      label: 'fields.higherRraScores4.options.null'
+    }].concat(staticRraScores.getstaticRraScores())
+  },
+  higherRraEvidence4: {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
+    attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
+  },
+  higherRraSkill5: {
+    mixin: 'select',
+    validate: 'required',
+    options: [{
+      value: ' ',
+      label: 'fields.higherRraSkill5.options.null'
+    }].concat(staticSfiaSkills)
+  },
+  higherRraScores5: {
+    mixin: 'select',
+    validate: ['required'],
+    options: [{
+      value: '',
+      label: 'fields.higherRraScores5.options.null'
+    }].concat(staticRraScores.getstaticRraScores())
+  },
+  higherRraEvidence5: {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    validate: ['required', { type: 'maxword', arguments: 300 }],
+    attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
+  },
+  higherRraSkill6: {
+    mixin: 'select',
+    validate: 'required',
+    options: [{
+      value: ' ',
+      label: 'fields.higherRraSkill4.options.null'
+    }].concat(staticSfiaSkills)
+  },
+  higherRraScores6: {
+    mixin: 'select',
+    validate: ['required'],
+    options: [{
+      value: '',
+      label: 'fields.higherRraScores6.options.null'
+    }].concat(staticRraScores.getstaticRraScores())
+  },
+  higherRraEvidence6: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
