@@ -1,7 +1,5 @@
 'use strict';
 
-// const { isValidEmail } = require('../../common/validators.js');
-
 module.exports = {
   rraEmail: {
     mixin: 'input-text',

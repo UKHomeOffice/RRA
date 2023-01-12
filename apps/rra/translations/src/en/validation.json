@@ -2,7 +2,7 @@
   "rraName": {
     "required": "Please enter your full name"
   },
-  "rraAdelphiNumber": {
+  "rraEmployeeNumber": {
     "required": "Please enter your Employment Number",
     "numeric": "Your Employment Number should contain numbers only"
   },
@@ -57,7 +57,46 @@
      "required": "Evidence Statement",
      "maxword": "Keep to the {{maxword}} word limit"
   },
-
+  "rraSkill3": {
+    "required": "Please select a skill"
+  },
+  "rraScores3": {
+    "required": "Please select a score"
+  },
+  "rraEvidence3": {
+    "required": "Evidence Statement",
+    "maxword": "Keep to the {{maxword}} word limit"
+  },
+  "rraSkill4": {
+    "required": "Please select a skill"
+  },
+  "rraScores4": {
+    "required": "Please select a score"
+  },
+  "rraEvidence4": {
+     "required": "Evidence Statement",
+     "maxword": "Keep to the {{maxword}} word limit"
+  },
+  "rraSkill5": {
+    "required": "Please select a skill"
+  },
+  "rraScores5": {
+    "required": "Please select a score"
+  },
+  "rraEvidence5": {
+    "required": "Evidence Statement",
+    "maxword": "Keep to the {{maxword}} word limit"
+  },
+  "rraSkill6": {
+    "required": "Please select a skill"
+  },
+  "rraScores6": {
+    "required": "Please select a score"
+  },
+  "rraEvidence6": {
+     "required": "Evidence Statement",
+     "maxword": "Keep to the {{maxword}} word limit"
+  },
   "currentRraLevel": {
     "required": "Please select your current proficiency level",
     "notSameOrLower": "The proficiency level must not be the same or lower than you're current proficiency level"
@@ -89,6 +128,42 @@
     "required": "Please select a score"
   },
   "higherRraEvidence2": {
+     "required": "Please enter a statement of professional proficiency development "
+  },
+  "higherRraSkill3": {
+    "required": "Please select a skill"
+  },
+  "higherRraScores3": {
+    "required": "Please select a score"
+  },
+  "higherRraEvidence3": {
+    "required": "Please enter a statement of professional proficiency development "
+  },
+  "higherRraSkill4": {
+    "required": "Please select a skill"
+  },
+  "higherRraScores4": {
+    "required": "Please select a score"
+  },
+  "higherRraEvidence4": {
+     "required": "Please enter a statement of professional proficiency development "
+  },
+  "higherRraSkill5": {
+    "required": "Please select a skill"
+  },
+  "higherRraScores5": {
+    "required": "Please select a score"
+  },
+  "higherRraEvidence5": {
+    "required": "Please enter a statement of professional proficiency development "
+  },
+  "higherRraSkill6": {
+    "required": "Please select a skill"
+  },
+  "higherRraScores6": {
+    "required": "Please select a score"
+  },
+  "higherRraEvidence6": {
      "required": "Please enter a statement of professional proficiency development "
   },
   "cpdDescription": {

@@ -28,6 +28,18 @@
   "skill2": {
     "header": "Skill 2"
   },
+  "skill3": {
+    "header": "Skill 3"
+  },
+  "skill4": {
+    "header": "Skill 4"
+  },
+  "skill5": {
+    "header": "Skill 5"
+  },
+  "skill6": {
+    "header": "Skill 6"
+  },
   "qualifications": {
     "header": "Qualifications"
   },
@@ -44,7 +56,22 @@
   "higherSkill2": {
     "header": "Skill 2",
     "intro": "Use the relevant ready-reckoner to help you understand your how your proficiency level has developed since your last assessment before writing the self-assessment. You should clearly show how your professional proficiency has developed since your last RRA application."
-
+  },
+  "higherSkill3": {
+    "header": "Skill 3",
+    "intro": "Use the relevant ready-reckoner to help you understand your how your proficiency level has developed since your last assessment before writing the self-assessment. You should clearly show how your professional proficiency has developed since your last RRA application."
+  },
+  "higherSkill4": {
+    "header": "Skill 4",
+    "intro": "Use the relevant ready-reckoner to help you understand your how your proficiency level has developed since your last assessment before writing the self-assessment. You should clearly show how your professional proficiency has developed since your last RRA application."
+  },
+  "higherSkill5": {
+    "header": "Skill 5",
+    "intro": "Use the relevant ready-reckoner to help you understand your how your proficiency level has developed since your last assessment before writing the self-assessment. You should clearly show how your professional proficiency has developed since your last RRA application."
+  },
+  "higherSkill6": {
+    "header": "Skill 6",
+    "intro": "Use the relevant ready-reckoner to help you understand your how your proficiency level has developed since your last assessment before writing the self-assessment. You should clearly show how your professional proficiency has developed since your last RRA application."
   },
   "cpd":{
     "header": "Professional Development"
@@ -99,8 +126,7 @@
   },
   "confirmation": {
     "title": "Application complete",
-    "alert": "Application complete",
     "subheader": "Thank you",
-    "content": "You have completed an example of a form built using HOF."
+    "content": "You will receive a confirmation email shortly."
   }
 }

@@ -886,7 +886,7 @@ module.exports = {
     return [
       'INAN - Analytics',
       'DTAN - Data Modelling and Design',
-      'PROG - Programming/software development',
+      'PROG - Programming/Software Development',
       'INOV - Innovation',
       'QUAS - Quality Assurance',
       'RLMT - Relationship Management'
@@ -1113,7 +1113,7 @@ module.exports = {
       'DATM - Data Management',
       'ASUP - Application Support',
       'TEST - Testing',
-      'PROG - Software Development',
+      'PROG - Programming/Software Development',
       'SWDN - Software Design',
       'SINT - Systems Integration and Build',
       'DLMG - Systems Development Management',
