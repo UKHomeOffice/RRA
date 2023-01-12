@@ -44,4 +44,3 @@ spec:
               serviceName: {{ .APP_NAME }}
               {{ end }}
               servicePort: 10443
-              
