@@ -15,8 +15,8 @@ spec:
         - {{ .DRONE_BUILD_NUMBER }}.internal.{{ .BRANCH_ENV }}.homeoffice.gov.uk
         - rra-{{ .DRONE_SOURCE_BRANCH }}.internal.{{ .BRANCH_ENV }}.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-        - rra-sas.rra.uat.internal.sas-notprod.homeoffice.gov.uk
-        - rra-sas.{{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
+        - sas-rra.uat.internal.sas-notprod.homeoffice.gov.uk
+        - {{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
         - stg.internal.rra.sas.homeoffice.gov.uk
         - stg.internal.{{ .APP_NAME }}.sas.homeoffice.gov.uk
@@ -30,9 +30,7 @@ spec:
     {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
     - host: rra-{{ .DRONE_SOURCE_BRANCH }}.internal.{{ .BRANCH_ENV }}.homeoffice.gov.uk
     {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-     - host: rra-sas.{{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
-    # - host: sas-{{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
-     - host: sas.rra.uat.internal.sas-notprod.homeoffice.gov.uk
+    - host: sas-{{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
     {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
     - host: stg.internal.{{ .APP_NAME }}.sas.homeoffice.gov.uk
     {{ end }}
