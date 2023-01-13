@@ -58,7 +58,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: session-secret
-                  key: session-secret
+                  key: token
             {{ end }}
             - name: NOTIFY_KEY
               valueFrom:
