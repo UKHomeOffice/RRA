@@ -11,13 +11,6 @@ module.exports = {
     imgSrc: ['data:']
   },
   useMocks: useMocks,
-/*   upload: {
-    maxFileSize: '100mb',
-    // if mocks set use file service served up by app otherwise use filevault's port 3000
-    hostname: !useMocks && process.env.FILE_VAULT_URL ?
-      process.env.FILE_VAULT_URL :
-      `http://localhost:${useMocks ? (process.env.PORT || 8080) : 3000}/file`
-  }, */
   email: {
     caseworker: process.env.CASEWORKER_EMAIL,
     notifyApiKey: process.env.NOTIFY_KEY,
