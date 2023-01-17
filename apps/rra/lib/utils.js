@@ -48,7 +48,7 @@ const sendEmail = (data, reference) => {
         skill6Evidence: data.rraEvidence6,
         qualifications: data.qualifications,
         supportingDocuments: document,
-        formId: 'tests'
+        formId: 'link to pdf'
       },
       reference
     });
@@ -88,7 +88,7 @@ const sendEmail = (data, reference) => {
       higherSkill6Score: data.higherRraScores6,
       higherSkill6Evidence: data.higherRraEvidence6,
       professionalDev: data.cpdDescription,
-      supportingDocuments: document
+      supportingDocuments: data.images[0].url
     },
     reference
   });

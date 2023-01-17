@@ -12,7 +12,7 @@ module.exports = name => superclass => class extends superclass {
       // N:B validation controller gets values from
       // req.form.values and not on req.files
       req.form.values[name] = req.files[name].name;
-      req.log('info', `Reference: ${req.sessionModel.get('reference')}, 
+      req.log('info', `Reference: ${req.sessionModel.get('reference')},
                        Processing image: ${req.form.values[name]}`);
     }
     super.process.apply(this, arguments);
@@ -20,7 +20,8 @@ module.exports = name => superclass => class extends superclass {
 
   locals(req, res, next) {
     if (!Object.keys(req.form.errors).length) {
-      req.form.values.rraSupportingDocumentsUpload = null;
+      req.form.values['rraSupportingDocumentsUpload-upload'] = null;
+      //req.form.values.rraSupportingDocumentsUpload = null;
     }
     return super.locals(req, res, next);
   }
