@@ -60,36 +60,36 @@ steps:
         - feature/*
       event: [push, pull_request]
 
-# steps:
-#   - name: setup_deploy
-#     pull: if-not-exists
-#     image: node:14
-#     environment:
-#       NOTIFY_KEY: USE_MOCK
-#     commands:
-#       - yarn install --frozen-lockfile
-#       - yarn run postinstall
-#     when:
-#       branch:
-#         include:
-#         - main
-#       event: push
+steps:
+  - name: setup_deploy
+    pull: if-not-exists
+    image: node:14
+    environment:
+      NOTIFY_KEY: USE_MOCK
+    commands:
+      - yarn install --frozen-lockfile
+      - yarn run postinstall
+    when:
+      branch:
+        include:
+        - main
+      event: push
 
-#   - name: linting_deploy
-#     <<: *linting
-#     when:
-#       branch:
-#         include:
-#           - main
-#       event: push
+  - name: linting_deploy
+    <<: *linting
+    when:
+      branch:
+        include:
+          - main
+      event: push
 
-  # - name: unit_tests_deploy
-  #   <<: *unit_tests
-  #   when:
-  #     branch:
-  #       include:
-  #         - main
-  #     event: push 
+  - name: unit_tests_deploy
+    <<: *unit_tests
+    when:
+      branch:
+        include:
+          - main
+      event: push
 
   - name: build_image
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
@@ -100,11 +100,7 @@ steps:
       - name: dockersock
         path: /var/run
     when:
-      # branch: main
-      branch:
-        include:
-          - main
-          - feature/*
+      branch: main
       event: [push, pull_request]
 
   - name: image_to_quay
@@ -118,32 +114,72 @@ steps:
     - docker tag $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
     - docker push $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
     when:
+      branch: main
+      event: [push, pull_request]
+
+  # Deploy to pull request branch environment
+  - name: deploy_to_branch
+    pull: if-not-exists
+    image: quay.io/ukhomeofficedigital/kd:v1.14.0
+    environment:
+      # NOTIFY_STUB: stub
+      KUBE_SERVER:
+        from_secret: kube_server_dev
+      KUBE_TOKEN:
+        from_secret: kube_token_dev
+    commands:
+      - bin/deploy.sh $${BRANCH_ENV}
+    when:
+      # branch: main
+      branch:
+        include:
+          - main
+      event: [pull_request, push]
+
+  - name: setup_branch
+    pull: if-not-exists
+    image: node:14
+    environment:
+      NOTIFY_KEY: USE_MOCK
+    commands:
+      - yarn install --frozen-lockfile
+      - yarn run postinstall
+    when:
       branch:
         include:
           - main
           - feature/*
-      event: [push, pull_request]
+      event: pull_request
 
-  # # Deploy to pull request UAT environment
-  # - name: deploy_to_branch
-  #   pull: if-not-exists
-  #   image: quay.io/ukhomeofficedigital/kd:v1.14.0
-  #   environment:
-  #     # NOTIFY_STUB: stub
-  #     KUBE_SERVER:
-  #       from_secret: kube_server_dev
-  #     KUBE_TOKEN:
-  #       from_secret: kube_token_dev
-  #   commands:
-  #     - bin/deploy.sh $${BRANCH_ENV}
-  #   when:
-  #     # branch: main
-  #     branch:
-  #       include:
-  #         - main
-  #     event: [pull_request, push]
+  - name: linting_branch
+    <<: *linting
+    when:
+      branch:
+        include:
+          - main
+          - feature/*
+      event: pull_request
 
-  # Deploy to Master UAT environment
+  - name: unit_tests_branch
+    <<: *unit_tests
+    when:
+      branch:
+        include:
+          - main
+          - feature/*
+      event: pull_request
+
+  - name: acceptance_tests_branch
+    <<: *acceptance_tests
+    commands:
+      - export ACCEPTANCE_HOST_NAME=https://$${APP_NAME}-$${DRONE_SOURCE_BRANCH}.$${BRANCH_ENV}.homeoffice.gov.uk
+      - npx playwright install
+      - npm run test:acceptance
+    when:
+      branch: main
+      event: pull_request
+
+    # Deploy to UAT environment
   - name: deploy_to_uat
     pull: if-not-exists
     image: quay.io/ukhomeofficedigital/kd:v1.14.0
@@ -154,58 +190,9 @@ steps:
         from_secret: kube_token_dev
     commands:
       - bin/deploy.sh $${UAT_ENV}
-    when:
-      branch:
-        include:
-          - main
-          - feature/*
-      event: [pull_request, push]
-
-  # - name: setup_branch
-  #   pull: if-not-exists
-  #   image: node:14
-  #   environment:
-  #     NOTIFY_KEY: USE_MOCK
-  #   commands:
-  #     - yarn install --frozen-lockfile
-  #     - yarn run postinstall
-  #   when:
-  #     branch:
-  #       include:
-  #         - main
-  #         - feature/*
-  #         - fix/*
-  #     event: pull_request
-
-  # - name: linting_branch
-  #   <<: *linting
-  #   when:
-  #     branch:
-  #       include:
-  #         - main
-  #         - feature/*
-  #         - fix/*
-  #     event: pull_request
-
-  # - name: unit_tests_branch
-    # <<: *unit_tests
-    # when:
-    #   branch:
-    #     include:
-    #       - main
-    #       - feature/*
-    #       - fix/*
-    #   event: pull_request
-
-  # - name: acceptance_tests_branch
-  #   <<: *acceptance_tests
-  #   commands:
-  #     - export ACCEPTANCE_HOST_NAME=https://$${APP_NAME}-$${DRONE_SOURCE_BRANCH}.$${BRANCH_ENV}.homeoffice.gov.uk
-  #     - npx playwright install
-  #     - npm run test:acceptance
-  #   when:
-  #     branch: main
-  #     event: pull_request
+   when:
+      branch: main
+      event: push
 
   # Get pull request branch so correct PR UAT environment is torn down in the tear_down_branch step that follows
   - name: get_pr_branch
@@ -283,7 +270,7 @@ steps:
       cron: tear_down_pr_envs
       event: cron
 
-  # Slack notification upon a CRON job fail 
+  # Slack notification upon a CRON job fail
   - name: cron_notify_slack_tear_down_pr_envs
     pull: if-not-exists
     image: plugins/slack
