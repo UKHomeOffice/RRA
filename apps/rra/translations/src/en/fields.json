@@ -8,7 +8,7 @@
   "rraFunction": {
     "label": "Function or Portfolio"
   },
-  "rraEmail": {
+  "user-email": {
     "label": "Email Address",
     "hint": "Please enter your home office email address"
   },

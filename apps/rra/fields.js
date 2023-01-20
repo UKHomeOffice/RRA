@@ -17,7 +17,7 @@ module.exports = {
   rraEmployeeNumber: {
     validate: ['required', 'numeric']
   },
-  rraEmail: {
+  'user-email': {
     validate: ['required', 'email']
   },
   rraManagerEmail: {
