@@ -1,20 +1,26 @@
 'use strict';
-const emailLookupAndSend = require('./behaviours/email-lookup-sender');
+
+const SendVerificationEmail = require('./behaviours/send-verification-email');
+const VerifyEmailDomain = require('./behaviours/verify-email-domain');
 
 module.exports = {
   name: 'verify',
   baseUrl: '/verify',
-  pages: {
-    '/email-not-recognised': 'email-not-recognised'
-  },
   steps: {
     '/who-do-you-work-for': {
-      fields: ['rraEmail'],
-      behaviours: [emailLookupAndSend],
+      fields: ['user-organisation', 'user-email'],
+      // VerifyEmailDomain(opts) can be used if an email domain list needs to be validated
+      behaviours: [VerifyEmailDomain({
+        emailDomainList: [
+          'homeoffice.gov.uk',
+          'digital.homeoffice.gov.uk'
+        ]
+      }), SendVerificationEmail],
       next: '/check-inbox'
     },
-    '/check-inbox': {
-      behaviours: require('./behaviours/confirm-email-passer')
+    '/check-inbox': {},
+    '/team-email-invalid': {
+      backLink: '/verify/who-do-you-work-for'
     }
   }
 };

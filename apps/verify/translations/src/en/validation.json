@@ -1,7 +1,8 @@
 {
-  "rraEmail": {
+  "user-email": {
     "required": "Enter a valid email address",
     "email": "Enter a valid email address",
+    "invalid": "This email domain is not allowed to use this service. Only Home Office email domains are recognised."
     "maxlength": "You must enter no more than 15,000 characters"
   },
   "confirm-email": {

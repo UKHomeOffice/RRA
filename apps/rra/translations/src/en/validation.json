@@ -6,7 +6,7 @@
     "required": "Please enter your Employment Number",
     "numeric": "Your Employment Number should contain numbers only"
   },
-  "rraEmail": {
+  "user-email": {
     "required": "Please enter a contact email address",
     "email": "Please enter a valid email address"
   },
