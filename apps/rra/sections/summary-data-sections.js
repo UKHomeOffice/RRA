@@ -11,7 +11,7 @@ module.exports = {
     'rraName',
     'rraEmployeeNumber',
     'rraFunction',
-    'rraEmail',
+    'user-email',
     'rraManagerEmail'
   ],
   appliedBefore: [

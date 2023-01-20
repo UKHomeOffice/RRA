@@ -48,7 +48,7 @@ module.exports = {
         resetJourneyToSubmitRRA,
         validateDomain
       ],
-      fields: ['rraName', 'rraEmployeeNumber','rraFunction', 'rraEmail', 'rraManagerEmail'],
+      fields: ['rraName', 'rraEmployeeNumber','rraFunction', 'user-email', 'rraManagerEmail'],
       forks: [{
         target: '/higherProfessionDetails',
         condition: req => {
@@ -105,17 +105,17 @@ module.exports = {
       behaviours: [validateHigherLevel],
       fields: ['higherRraRole', 'higherRraGrouping', 'higherRraGrade','currentRraLevel', 'higherRraLevels'],
       next: '/lastAssessmentDate',
-      continueOnEdit: true 
+      continueOnEdit: true
     },
     '/lastAssessmentDate':{
       fields: ['lastAssessmentDate'],
       next: '/previousScore',
-      continueOnEdit: true 
+      continueOnEdit: true
     },
     '/previousScore': {
       fields: [ 'previousScore'],
       next: '/higherSkill1',
-      continueOnEdit: true 
+      continueOnEdit: true
     },
     '/higherSkill1': {
       behaviours: [higherSkillBehaviour],
