@@ -50,5 +50,22 @@ module.exports = {
     password: process.env.KEYCLOAK_PASSWORD,
     clientId: process.env.KEYCLOAK_CLIENT_ID,
     secret: process.env.KEYCLOAK_SECRET
+  },
+  audit: {
+    enabled: String(process.env.AUDIT_DATA) === 'true',
+    host: process.env.AUDIT_DB_HOST,
+    user: process.env.AUDIT_DB_USER,
+    password: process.env.AUDIT_DB_PASS,
+    database: process.env.AUDIT_DB_NAME,
+    pg: { version: '8.8.0' }
+  },
+  saveService: {
+    port: process.env.DATASERVICE_SERVICE_PORT_HTTPS || '3000',
+    host: process.env.DATASERVICE_SERVICE_HOST &&
+      `https://${process.env.DATASERVICE_SERVICE_HOST}` || 'http://127.0.0.1'
+  },
+  reports: {
+    deletionTimeout: +process.env.DELETION_TIMEOUT || 30,
+    submitTimeout: +process.env.SUBMIT_TIMEOUT || 7
   }
 };
