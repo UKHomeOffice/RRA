@@ -166,10 +166,10 @@
   "cpdDescription": {
     "required": "Please enter professional development in last 12 months"
  },
-  "supportingDocuments":{
+  "supporting-documents":{
     "required": "Please upload a supporting document"
   },
-  "anotherSupportingDocuments":{
+  "another-supporting-document":{
     "required": "Please upload a supporting document"
   },
   "images": {

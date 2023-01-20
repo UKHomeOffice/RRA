@@ -392,7 +392,7 @@ module.exports = {
     validate: ['required', { type: 'maxlength', arguments: 5000 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  supportingDocumentsUpload: {
+  'supporting-documents-upload': {
     mixin: 'radio-group',
     validate: 'required',
     legend: {
@@ -400,25 +400,25 @@ module.exports = {
     },
     options: [{
       value: 'yes',
-      toggle: 'supportingDocuments',
+      toggle: 'supporting-documents',
       child: 'input-file'
     }, {
       value: 'no'
     }]
   },
-  supportingDocuments: {
+  'supporting-documents': {
     mixin: 'input-file',
     className: 'govuk-file-upload',
     disableRender: true,
     dependent: {
-      field: 'supportingDocumentsUpload',
+      field: 'supporting-documents-upload',
       value: 'yes'
     },
     validate: [
       'required',
     ]
   },
-  supportingDocumentsUploadMore: {
+  'supporting-documents-upload-more': {
     mixin: 'radio-group',
     validate: 'required',
     legend: {
@@ -426,18 +426,18 @@ module.exports = {
     },
     options: [{
       value: 'yes',
-      toggle: 'anotherSupportingDocuments',
+      toggle: 'another-supporting-document',
       child: 'input-file',
     }, {
       value: 'no'
     }]
   },
-  anotherSupportingDocuments: {
+  'another-supporting-document': {
     mixin: 'input-file',
     disableRender: true,
     className: 'govuk-file-upload',
     dependent: {
-      field: 'supportingDocumentsUploadMore',
+      field: 'supporting-documents-upload-more',
       value: 'yes'
     },
     validate: [

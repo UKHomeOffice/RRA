@@ -7,8 +7,6 @@ const jimp = require('jimp');
 const uuid = require('uuid').v4;
 const fs = require('fs');
 const noPreview = 'data:image/png;base64,' + fs.readFileSync('assets/images/no-preview.png', {encoding: 'base64'});
-
-
 const config = require('../../../config');
 
 module.exports = class UploadModel extends Model {
