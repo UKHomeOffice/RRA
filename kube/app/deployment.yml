@@ -53,6 +53,12 @@ spec:
               {{ else }}
               value: redis
               {{ end }}
+            {{ if or (eq .KUBE_NAMESPACE .BRANCH_ENV) (eq .KUBE_NAMESPACE .UAT_ENV) }}
+            - name: ALLOW_SKIP
+              value: "true"
+            - name: SKIP_EMAIL
+              value: "sas-hof-test@digital.homeoffice.gov.uk"
+            {{ end }}
             {{ if not (eq .KUBE_NAMESPACE .BRANCH_ENV) }}
             - name: SESSION_SECRET
               valueFrom:
