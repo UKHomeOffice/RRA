@@ -350,11 +350,11 @@ services:
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
 
   # Anchore scanning needs background service to run
-  - name: anchore-submission-server
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
-    pull: always
-    commands:
-      - /run.sh server
+  # - name: anchore-submission-server
+  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
+  #   pull: always
+  #   commands:
+  #     - /run.sh server
 
   # Redis session setup in background so integration tests can run
   - name: session
