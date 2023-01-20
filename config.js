@@ -22,7 +22,7 @@ module.exports = {
     notifyApiKey: process.env.NOTIFY_KEY,
     notifyTemplate: process.env.NOTIFY_TEMPLATE,
     notifyHigherTemplate: process.env.NOTIFY_HIGHER_TEMPLATE,
-    templateUserAuthId: process.env.TEMPLATE_USER_AUTHORISATION_ID,
+    templateUserAuthId: process.env.USER_AUTHORISATION_TEMPLATE_ID,
     from: process.env.FROM_ADDRESS,
     replyTo: process.env.REPLY_TO,
     accessKeyId: process.env.AWS_USER,
