@@ -44,9 +44,9 @@ unit_tests: &unit_tests
 #   commands:
 #     - sonar-scanner -Dproject.settings=./sonar-project.properties
 
-acceptance_tests: &acceptance_tests
-  pull: if-not-exists
-  image: mcr.microsoft.com/playwright:v1.12.3-focal
+# acceptance_tests: &acceptance_tests
+#   pull: if-not-exists
+#   image: mcr.microsoft.com/playwright:v1.12.3-focal
 
 steps:
   - name: clone_repos
@@ -65,7 +65,6 @@ steps:
         - feature/*
       event: [push, pull_request]
 
-steps:
   # - name: setup_deploy
   #   pull: if-not-exists
   #   image: node:14
