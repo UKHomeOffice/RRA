@@ -37,13 +37,12 @@ module.exports = superclass => class extends superclass {
   async saveValues(req, res, next) {
     const host = req.get('host');
     const email = req.form.values['user-email'];
-    const organisation = req.sessionModel.get('user-organisation');
 
     if (this.skipEmailVerification(email)) {
       return super.saveValues(req, res, next);
     }
 
-    const token = tokenGenerator.save(email, organisation);
+    const token = tokenGenerator.save(email);
 
     try {
       await notifyClient.sendEmail(templateId, email, {

@@ -8,7 +8,7 @@ module.exports = {
   baseUrl: '/verify',
   steps: {
     '/who-do-you-work-for': {
-      fields: ['user-organisation', 'user-email'],
+      fields: 'user-email',
       // VerifyEmailDomain(opts) can be used if an email domain list needs to be validated
       behaviours: [VerifyEmailDomain({
         emailDomainList: [
