@@ -246,7 +246,7 @@ steps:
         from_secret: kube_token_dev
     commands:
       - bin/deploy.sh $${UAT_ENV}
-   when:
+    when:
       branch: main
       event: push
 
