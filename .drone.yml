@@ -62,7 +62,6 @@ steps:
       branch:
         include:
         - main
-        - feature/*
       event: [push, pull_request]
 
 steps:
