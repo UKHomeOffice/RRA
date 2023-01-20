@@ -30,7 +30,7 @@ const sendEmail = (email, host, token) => {
     .then(console.log(`email sent to ${email}`))
     .catch(error => {
       // eslint-disable-next-line no-console
-      console.log('GOV NOTIFY ERROR ' + JSON.stringify(err.response.data.errors[0]))
+      console.log('GOV NOTIFY ERROR ' + JSON.stringify(error.response.data.errors[0]))
       console.error(error);
     });
 };
