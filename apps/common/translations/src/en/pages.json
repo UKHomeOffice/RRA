@@ -1,7 +1,8 @@
 {
+  "start": {
+    "header": "Recruitment and Retention Allowance (RRA) Application"
+  },
   "rra": {
-    "header": "Recruitment and Retention Allowance (RRA) Application ",
-    "title": "Recruitment and Retention Allowance",
     "subheader": "Guidance on completing the self-assessment"
   },
   "accessibility": {
