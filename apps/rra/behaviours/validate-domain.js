@@ -2,14 +2,14 @@ const emailDomainCheck = require('../../../rra-lists/email_domains');
 
 module.exports = SuperClass => class extends SuperClass {
   validate(req, res, next) {
-    const managerEmail = req.form.values.rraManagerEmail;
+    const managerEmail = req.form.values.managerEmail;
     const emailDomain = managerEmail.replace(/.*@/, '');
 
     const isRecognisedEmail = emailDomainCheck.isValidDomain(emailDomain);
     if (!isRecognisedEmail) {
       return next({
-        rraManagerEmail: new this.ValidationError(
-          'rraManagerEmail',
+        managerEmail: new this.ValidationError(
+          'managerEmail',
           {
             type: 'invalidDomain'
           }

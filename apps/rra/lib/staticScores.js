@@ -3,7 +3,7 @@
 'use strict';
 
 module.exports = {
-  getstaticRraScores: function () {
+  getStaticScores: function () {
     return [
       { value: '2',
         label: '2'

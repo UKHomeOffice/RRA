@@ -3,29 +3,25 @@
 
 const _ = require('lodash');
 
-const staticRraGrades = require('./lib/staticRraGrades');
-const staticRraGrouping = require('./lib/staticRraGrouping');
-const staticRraLevels = require('./lib/staticRraLevels');
-const staticRraScores = require('./lib/staticRraScores');
-const staticSfiaSkills = [...new Map(require('./lib/staticSfiaSkills').getstaticSfiaSkills().map(obj => [JSON.stringify(obj), obj])).values()];
+const staticGrades = require('./lib/staticGrades');
+const staticGrouping = require('./lib/staticGrouping');
+const staticLevels = require('./lib/staticLevels');
+const staticScores = require('./lib/staticScores');
+const staticSfiaSkills = [...new Map(require('./lib/staticSfiaSkills').getStaticSfiaSkills().map(obj => [JSON.stringify(obj), obj])).values()];
 const dateComponent = require('hof').components.date;
 
 module.exports = {
-  rraName: {
+  name: {
     validate: 'required'
   },
-  rraEmployeeNumber: {
+  employmentNumber: {
     validate: ['required', 'numeric']
   },
   'user-email': {
     validate: ['required', 'email']
   },
-  rraManagerEmail: {
+  managerEmail: {
     validate: ['required', 'email']
-  },
-  rraPassword: {
-    type:'password',
-    validate: 'required'
   },
   appliedBefore: {
     isPageHeading: true,
@@ -36,68 +32,68 @@ module.exports = {
       'no'
     ]
   },
-  rraFunction: {
+  function: {
     validate: 'required',
   },
-  rraGrade: {
-    mixin: 'select',
-    validate: 'required',
-    options:
-      [{
-        value: ' ',
-        label: 'fields.rraGrade.options.null'
-      }].concat(staticRraGrades.getstaticRraGrades())
-  },
-  rraGrouping: {
-    mixin: 'select',
-    validate: ['required'],
-    className: ['typeahead', 'js-hidden'],
-    options: [{
-      value: '',
-      label: 'fields.rraGrouping.options.null'
-    }].concat(staticRraGrouping.getstaticRraGrouping())
-  },
-  rraLevels: {
-    mixin: 'select',
-    validate: ['required',],
-    options: [{
-      value: '',
-      label: 'fields.rraLevels.options.null'
-    }].concat(staticRraLevels.getstaticApplyRraLevels())
-  },
-  higherRraGrade: {
+  grade: {
     mixin: 'select',
     validate: 'required',
     options:
       [{
         value: ' ',
-        label: 'fields.higherRraGrade.options.null'
-      }].concat(staticRraGrades.getstaticRraGrades())
+        label: 'fields.grade.options.null'
+      }].concat(staticGrades.getStaticGrades())
   },
-  higherRraGrouping: {
+  grouping: {
     mixin: 'select',
     validate: ['required'],
     className: ['typeahead', 'js-hidden'],
     options: [{
       value: '',
-      label: 'fields.higherRraGrouping.options.null'
-    }].concat(staticRraGrouping.getstaticRraGrouping())
+      label: 'fields.grouping.options.null'
+    }].concat(staticGrouping.getStaticGrouping())
   },
-  higherRraLevels: {
+  levels: {
     mixin: 'select',
     validate: ['required',],
     options: [{
       value: '',
-      label: 'fields.higherRraLevels.options.null'
-    }].concat(staticRraLevels.getstaticApplyRraLevels())
+      label: 'fields.levels.options.null'
+    }].concat(staticLevels.getStaticApplyLevels())
   },
-  currentRraLevel: {
+  higherGrade: {
+    mixin: 'select',
+    validate: 'required',
+    options:
+      [{
+        value: ' ',
+        label: 'fields.higherGrade.options.null'
+      }].concat(staticGrades.getStaticGrades())
+  },
+  higherGrouping: {
+    mixin: 'select',
+    validate: ['required'],
+    className: ['typeahead', 'js-hidden'],
+    options: [{
+      value: '',
+      label: 'fields.higherGrouping.options.null'
+    }].concat(staticGrouping.getStaticGrouping())
+  },
+  higherLevels: {
+    mixin: 'select',
+    validate: ['required',],
+    options: [{
+      value: '',
+      label: 'fields.higherLevels.options.null'
+    }].concat(staticLevels.getStaticApplyLevels())
+  },
+  currentLevel: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.currentRraLevel.options.null'
-    }].concat(staticRraLevels.getstaticCurrentRraLevels())
+      label: 'fields.currentLevel.options.null'
+    }].concat(staticLevels.getStaticCurrentLevels())
   },
   lastAssessmentDate: dateComponent('lastAssessmentDate', {
     mixin: 'input-date',
@@ -106,138 +102,138 @@ module.exports = {
   previousScore: {
     validate: ['required', 'numeric']
   },
-  rraSkill: {
+  skill1: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.rraSkill.options.null'
+      label: 'fields.skill1.options.null'
     }].concat(staticSfiaSkills)
   },
-  rraScores: {
+  scores1: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.rraScores.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.scores1.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  rraEvidence: {
+  evidence1: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  rraSkill2: {
+  skill2: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.rraSkill2.options.null'
+      label: 'fields.skill2.options.null'
     }].concat(staticSfiaSkills)
   },
-  rraScores2: {
+  scores2: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.rraScores2.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.scores2.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  rraEvidence2: {
+  evidence2: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  rraSkill3: {
+  skill3: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.rraSkill3.options.null'
+      label: 'fields.skill3.options.null'
     }].concat(staticSfiaSkills)
   },
-  rraScores3: {
+  scores3: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.rraScores3.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.scores3.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  rraEvidence3: {
+  evidence3: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  rraSkill4: {
+  skill4: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.rraSkill4.options.null'
+      label: 'fields.skill4.options.null'
     }].concat(staticSfiaSkills)
   },
-  rraScores4: {
+  scores4: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.rraScores4.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.scores4.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  rraEvidence4: {
+  evidence4: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  rraSkill5: {
+  skill5: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.rraSkill5.options.null'
+      label: 'fields.skill5.options.null'
     }].concat(staticSfiaSkills)
   },
-  rraScores5: {
+  scores5: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.rraScores5.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.scores5.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  rraEvidence5: {
+  evidence5: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  rraSkill6: {
+  skill6: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.rraSkill6.options.null'
+      label: 'fields.skill6.options.null'
     }].concat(staticSfiaSkills)
   },
-  rraScores6: {
+  scores6: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.rraScores6.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.scores6.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  rraEvidence6: {
+  evidence6: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
@@ -251,138 +247,138 @@ module.exports = {
     validate: ['required', { type: 'maxlength', arguments: 5000 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  higherRraSkill: {
+  higherSkill1: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.higherRraSkill.options.null'
+      label: 'fields.higherSkill1.options.null'
     }].concat(staticSfiaSkills)
   },
-  higherRraScores: {
+  higherScores1: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.higherRraScores.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.higherScores1.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  higherRraEvidence: {
+  higherEvidence1: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  higherRraSkill2: {
+  higherSkill2: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.higherRraSkill2.options.null'
+      label: 'fields.higherSkill2.options.null'
     }].concat(staticSfiaSkills)
   },
-  higherRraScores2: {
+  higherScores2: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.higherRraScores2.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.higherScores2.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  higherRraEvidence2: {
+  higherEvidence2: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  higherRraSkill3: {
+  higherSkill3: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.higherRraSkill3.options.null'
+      label: 'fields.higherSkill3.options.null'
     }].concat(staticSfiaSkills)
   },
-  higherRraScores3: {
+  higherScores3: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.higherRraScores3.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.higherScores3.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  higherRraEvidence3: {
+  higherEvidence3: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  higherRraSkill4: {
+  higherSkill4: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.higherRraSkill4.options.null'
+      label: 'fields.higherSkill4.options.null'
     }].concat(staticSfiaSkills)
   },
-  higherRraScores4: {
+  higherScores4: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.higherRraScores4.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.higherScores4.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  higherRraEvidence4: {
+  higherEvidence4: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  higherRraSkill5: {
+  higherSkill5: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.higherRraSkill5.options.null'
+      label: 'fields.higherSkill5.options.null'
     }].concat(staticSfiaSkills)
   },
-  higherRraScores5: {
+  higherScores5: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.higherRraScores5.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.higherScores5.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  higherRraEvidence5: {
+  higherEvidence5: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     validate: ['required', { type: 'maxword', arguments: 300 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  higherRraSkill6: {
+  higherSkill6: {
     mixin: 'select',
     validate: 'required',
     options: [{
       value: ' ',
-      label: 'fields.higherRraSkill4.options.null'
+      label: 'fields.higherSkill4.options.null'
     }].concat(staticSfiaSkills)
   },
-  higherRraScores6: {
+  higherScores6: {
     mixin: 'select',
     validate: ['required'],
     options: [{
       value: '',
-      label: 'fields.higherRraScores6.options.null'
-    }].concat(staticRraScores.getstaticRraScores())
+      label: 'fields.higherScores6.options.null'
+    }].concat(staticScores.getStaticScores())
   },
-  higherRraEvidence6: {
+  higherEvidence6: {
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
@@ -396,7 +392,7 @@ module.exports = {
     validate: ['required', { type: 'maxlength', arguments: 5000 }],
     attributes: [{ attribute: 'spellcheck', value: 'true' },{attribute: 'rows', value: 8}]
   },
-  rraSupportingDocumentsUpload: {
+  supportingDocumentsUpload: {
     mixin: 'radio-group',
     validate: 'required',
     legend: {
@@ -404,25 +400,25 @@ module.exports = {
     },
     options: [{
       value: 'yes',
-      toggle: 'rraSupportingDocuments',
+      toggle: 'supportingDocuments',
       child: 'input-file'
     }, {
       value: 'no'
     }]
   },
-  rraSupportingDocuments: {
+  supportingDocuments: {
     mixin: 'input-file',
     className: 'govuk-file-upload',
     disableRender: true,
     dependent: {
-      field: 'rraSupportingDocumentsUpload',
+      field: 'supportingDocumentsUpload',
       value: 'yes'
     },
     validate: [
       'required',
     ]
   },
-  rraSupportingDocumentsUploadMore: {
+  supportingDocumentsUploadMore: {
     mixin: 'radio-group',
     validate: 'required',
     legend: {
@@ -430,18 +426,18 @@ module.exports = {
     },
     options: [{
       value: 'yes',
-      toggle: 'anotherRraSupportingDocuments',
+      toggle: 'anotherSupportingDocuments',
       child: 'input-file',
     }, {
       value: 'no'
     }]
   },
-  anotherRraSupportingDocuments: {
+  anotherSupportingDocuments: {
     mixin: 'input-file',
     disableRender: true,
     className: 'govuk-file-upload',
     dependent: {
-      field: 'rraSupportingDocumentsUploadMore',
+      field: 'supportingDocumentsUploadMore',
       value: 'yes'
     },
     validate: [

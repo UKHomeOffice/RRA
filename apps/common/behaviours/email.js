@@ -8,9 +8,9 @@ const Model = require('../models/email');
 
 function emailSubject(data) {
   if (data.appliedBefore === 'yes') {
-    subject = 'RRA - ' + data.rraName + ' - ' + data.rraGrouping + ' - ' + data.rraLevels + ' - Higher Rate';
+    subject = 'RRA - ' + data.name + ' - ' + data.grouping + ' - ' + data.levels + ' - Higher Rate';
   } else{
-    subject = 'RRA - ' + data.rraName + ' - ' + data.rraGrouping + ' - ' + data.rraLevels + ' - 1st App';
+    subject = 'RRA - ' + data.name + ' - ' + data.grouping + ' - ' + data.levels + ' - 1st App';
   }
   return subject;
 }
@@ -18,7 +18,7 @@ const serviceMap = {
   '/rra': data => {
     return {
       template: 'delivery',
-      
+
       subject: emailSubject(data)
     };
   }

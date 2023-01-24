@@ -3,7 +3,7 @@
 'use strict';
 
 module.exports = {
-  getstaticCurrentRraLevels: function () {
+  getStaticCurrentLevels: function () {
     return [
       { value: 'Baseline',
         label: 'Baseline'
@@ -19,7 +19,7 @@ module.exports = {
       }
     ];
   },
-  getstaticApplyRraLevels: function () {
+  getStaticApplyLevels: function () {
     return [
       { value: 'Practitioner',
         label: 'Practitioner'

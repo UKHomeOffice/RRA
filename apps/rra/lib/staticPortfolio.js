@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  getstaticRraPortfolio: function () {
+  getStaticPortfolio: function () {
     return [
       { value: 'Shared Application Services(Chief Technology Office)',
         label: 'Shared Application Services(Chief Technology Office)'

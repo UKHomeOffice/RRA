@@ -1,8 +1,8 @@
 {
-  "rraName": {
+  "name": {
     "required": "Please enter your full name"
   },
-  "rraEmployeeNumber": {
+  "employmentNumber": {
     "required": "Please enter your Employment Number",
     "numeric": "Your Employment Number should contain numbers only"
   },
@@ -10,94 +10,91 @@
     "required": "Please enter a contact email address",
     "email": "Please enter a valid email address"
   },
-  "rraManagerEmail": {
+  "managerEmail": {
     "required": "Enter a valid email address",
     "email": "Please enter a valid email address",
     "invalidDomain": "You must enter a home office email address"
   },
-  "rraPassword": {
-    "required": "Please enter a password"
-  },
   "appliedBefore": {
     "required": "Please indicate whether you have applied before"
   },
-  "rraFunction": {
+  "function": {
     "required": "Please enter your function or portfolio"
   },
-  "rraRole": {
+  "role": {
     "required": "Please enter your role"
   },
-  "rraGrouping": {
+  "grouping": {
     "required": "Please select an RRA group"
   },
-  "rraGrade": {
+  "grade": {
     "required": "Please select a grade"
   },
-  "rraLevels": {
+  "levels": {
     "required": "Please select the proficiency level you are applying for",
     "notSameOrLower": "The proficiency level must not be the same or lower than you're current proficiency level"
   },
-  "rraSkill": {
+  "skill1": {
     "required": "Please select a skill"
   },
-  "rraScores": {
+  "scores1": {
     "required": "Please select a score"
   },
-  "rraEvidence": {
+  "evidence1": {
     "required": "Evidence Statement",
     "maxword": "Keep to the {{maxword}} word limit"
   },
-  "rraSkill2": {
+  "skill2": {
     "required": "Please select a skill"
   },
-  "rraScores2": {
+  "scores2": {
     "required": "Please select a score"
   },
-  "rraEvidence2": {
+  "evidence2": {
      "required": "Evidence Statement",
      "maxword": "Keep to the {{maxword}} word limit"
   },
-  "rraSkill3": {
+  "skill3": {
     "required": "Please select a skill"
   },
-  "rraScores3": {
+  "scores3": {
     "required": "Please select a score"
   },
-  "rraEvidence3": {
+  "evidence3": {
     "required": "Evidence Statement",
     "maxword": "Keep to the {{maxword}} word limit"
   },
-  "rraSkill4": {
+  "skill4": {
     "required": "Please select a skill"
   },
-  "rraScores4": {
+  "scores4": {
     "required": "Please select a score"
   },
-  "rraEvidence4": {
+  "evidence4": {
      "required": "Evidence Statement",
      "maxword": "Keep to the {{maxword}} word limit"
   },
-  "rraSkill5": {
+  "skill5": {
     "required": "Please select a skill"
   },
-  "rraScores5": {
+  "scores5": {
     "required": "Please select a score"
   },
-  "rraEvidence5": {
+  "evidence5": {
     "required": "Evidence Statement",
     "maxword": "Keep to the {{maxword}} word limit"
   },
-  "rraSkill6": {
+  "skill6": {
     "required": "Please select a skill"
   },
-  "rraScores6": {
+  "scores6": {
     "required": "Please select a score"
   },
-  "rraEvidence6": {
+  "evidence6": {
      "required": "Evidence Statement",
      "maxword": "Keep to the {{maxword}} word limit"
   },
-  "currentRraLevel": {
+  "currentLevel": {
     "required": "Please select your current proficiency level",
     "notSameOrLower": "The proficiency level must not be the same or lower than you're current proficiency level"
 
@@ -112,67 +109,67 @@
     "required": "Please enter the score achieved in your last assessment",
     "numeric": "Please enter your score in digits"
   },
-  "higherRraSkill": {
+  "higherSkill1": {
     "required": "Please select a skill"
   },
-  "higherRraScores": {
+  "higherScores1": {
     "required": "Please select a score"
   },
-  "higherRraEvidence": {
+  "higherEvidence1": {
     "required": "Please enter a statement of professional proficiency development "
   },
-  "higherRraSkill2": {
+  "higherSkill2": {
     "required": "Please select a skill"
   },
-  "higherRraScores2": {
+  "higherScores2": {
     "required": "Please select a score"
   },
-  "higherRraEvidence2": {
+  "higherEvidence2": {
      "required": "Please enter a statement of professional proficiency development "
   },
-  "higherRraSkill3": {
+  "higherSkill3": {
     "required": "Please select a skill"
   },
-  "higherRraScores3": {
+  "higherScores3": {
     "required": "Please select a score"
   },
-  "higherRraEvidence3": {
+  "higherEvidence3": {
     "required": "Please enter a statement of professional proficiency development "
   },
-  "higherRraSkill4": {
+  "higherSkill4": {
     "required": "Please select a skill"
   },
-  "higherRraScores4": {
+  "higherScores4": {
     "required": "Please select a score"
   },
-  "higherRraEvidence4": {
+  "higherEvidence4": {
      "required": "Please enter a statement of professional proficiency development "
   },
-  "higherRraSkill5": {
+  "higherSkill5": {
     "required": "Please select a skill"
   },
-  "higherRraScores5": {
+  "higherScores5": {
     "required": "Please select a score"
   },
-  "higherRraEvidence5": {
+  "higherEvidence5": {
     "required": "Please enter a statement of professional proficiency development "
   },
-  "higherRraSkill6": {
+  "higherSkill6": {
     "required": "Please select a skill"
   },
-  "higherRraScores6": {
+  "higherScores6": {
     "required": "Please select a score"
   },
-  "higherRraEvidence6": {
+  "higherEvidence6": {
      "required": "Please enter a statement of professional proficiency development "
   },
   "cpdDescription": {
     "required": "Please enter professional development in last 12 months"
  },
-  "rraSupportingDocuments":{
+  "supportingDocuments":{
     "required": "Please upload a supporting document"
   },
-  "anotherRraSupportingDocuments":{
+  "anotherSupportingDocuments":{
     "required": "Please upload a supporting document"
   },
   "images": {

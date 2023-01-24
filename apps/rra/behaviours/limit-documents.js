@@ -3,8 +3,8 @@ module.exports = superclass => class extends superclass {
     const images = req.sessionModel.get('images');
     if (images && images.length > 6) {
       return next({
-        rraSupportingDocumentsUploadMore: new this.ValidationError(
-          'rraSupportingDocumentsUploadMore',
+        supportingDocumentsUploadMore: new this.ValidationError(
+          'supportingDocumentsUploadMore',
           {
             type: 'tooMany'
           }

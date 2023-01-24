@@ -1,23 +1,20 @@
 {
-  "rraName": {
+  "name": {
     "label": "Full Name"
   },
-  "rraEmployeeNumber": {
+  "employmentNumber": {
     "label":"Employment Number"
   },
-  "rraFunction": {
+  "function": {
     "label": "Function or Portfolio"
   },
   "user-email": {
     "label": "Email Address",
     "hint": "Please enter your home office email address"
   },
-  "rraManagerEmail": {
+  "managerEmail": {
     "label": "Manager's Email Address",
     "hint": "Please enter your manager's home office email address"
-  },
-  "rraPassword": {
-    "label": "Password"
   },
   "appliedBefore": {
     "legend": "Have you applied for RRA whilst in this role before?",
@@ -30,31 +27,31 @@
       }
     }
   },
-  "rraRole": {
+  "role": {
     "label": "Role",
     "hint": "For example, Associate Developer"
   },
-  "rraGrouping": {
+  "grouping": {
     "label": "RRA Grouping",
     "options": {
       "null": "Select..."
     },
     "hint": "Start to type and options will appear"
   },
-  "rraGrade": {
+  "grade": {
     "label": "Substantive Grade",
     "hint": "For example, SEO",
     "options": {
       "null": "Select..."
     }
   },
-  "rraLevels": {
+  "levels": {
     "label": "Applying for Proficiency Level",
     "options": {
       "null": "Select..."
     }
   },
-  "currentRraLevel": {
+  "currentLevel": {
     "label": "Current Proficiency Level",
     "options": {
       "null": "Select..."
@@ -66,218 +63,218 @@
   "previousScore": {
     "label": "Previous Score Acheived in the Last Assessment"
   },
-  "rraSkill": {
+  "skill1": {
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "rraScores": {
+  "scores1": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "rraEvidence": {
+  "evidence1": {
     "label": "Evidence Statement"
   },
-  "rraSkill2":{
+  "skill2":{
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "rraScores2": {
+  "scores2": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "rraEvidence2": {
+  "evidence2": {
     "label": "Evidence Statement"
   },
-  "rraSkill3": {
+  "skill3": {
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "rraScores3": {
+  "scores3": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "rraEvidence3": {
+  "evidence3": {
     "label": "Evidence Statement"
   },
-  "rraSkill4":{
+  "skill4":{
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "rraScores4": {
+  "scores4": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "rraEvidence4": {
+  "evidence4": {
     "label": "Evidence Statement"
   },
-  "rraSkill5": {
+  "skill5": {
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "rraScores5": {
+  "scores5": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "rraEvidence5": {
+  "evidence5": {
     "label": "Evidence Statement"
   },
-  "rraSkill6":{
+  "skill6":{
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "rraScores6": {
+  "scores6": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "rraEvidence6": {
+  "evidence6": {
     "label": "Evidence Statement"
   },
   "qualifications": {
     "label": "Please include any qualifications"
   },
-  "higherRraRole": {
+  "higherRole": {
     "label": "Role",
     "hint": "For example, Associate Developer"
   },
-  "higherRraGrouping": {
+  "higherGrouping": {
     "label": "RRA Grouping",
     "options": {
       "null": "Select..."
     },
     "hint": "Start to type and options will appear"
   },
-  "higherRraGrade": {
+  "higherGrade": {
     "label": "Substantive Grade",
     "hint": "For example, SEO",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraLevels": {
+  "higherLevels": {
     "label": "Applying for Proficiency Level",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraSkill": {
+  "higherSkill1": {
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraScores": {
+  "higherScores1": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraEvidence": {
+  "higherEvidence1": {
     "label": "Statement of Professional Proficiency Development"
   },
-  "higherRraSkill2":{
+  "higherSkill2":{
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraScores2": {
+  "higherScores2": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraEvidence2": {
+  "higherEvidence2": {
     "label": "Statement of Professional Proficiency Development"
   },
-  "higherRraSkill3": {
+  "higherSkill3": {
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraScores3": {
+  "higherScores3": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraEvidence3": {
+  "higherEvidence3": {
     "label": "Statement of Professional Proficiency Development"
   },
-  "higherRraSkill4":{
+  "higherSkill4":{
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraScores4": {
+  "higherScores4": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraEvidence4": {
+  "higherEvidence4": {
     "label": "Statement of Professional Proficiency Development"
   },
-  "higherRraSkill5": {
+  "higherSkill5": {
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraScores5": {
+  "higherScores5": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraEvidence5": {
+  "higherEvidence5": {
     "label": "Statement of Professional Proficiency Development"
   },
-  "higherRraSkill6":{
+  "higherSkill6":{
     "label": "Skill",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraScores6": {
+  "higherScores6": {
     "label": "Score",
     "options": {
       "null": "Select..."
     }
   },
-  "higherRraEvidence6": {
+  "higherEvidence6": {
     "label": "Statement of Professional Proficiency Development"
   },
   "cpdDescription": {
     "label": "Professional Development in last 12 months",
     "hint":"Please include any qualifications"
   },
-  "rraSupportingDocumentsUpload": {
+  "supportingDocumentsUpload": {
     "hint": "You can provide no more than 6 products / documents (e.g. a business case, a MS Project Plan) that you have completed.",
     "options": {
       "yes": {
@@ -291,10 +288,10 @@
       "required": "Select whether you have some evidence you want to upload"
     }
   },
-  "rraSupportingDocuments": {
+  "supportingDocuments": {
     "label": "Supporting Document"
   },
-  "rraSupportingDocumentsUploadMore": {
+  "supportingDocumentsUploadMore": {
     "hint": "You can provide no more than 6 products / documents (e.g. a business case, a MS Project Plan) that you have completed.",
     "options": {
       "yes": {
@@ -312,7 +309,7 @@
   "images": {
     "label": "Supporting Documents"
   },
-  "anotherRraSupportingDocuments": {
+  "anotherSupportingDocuments": {
     "label": "Supporting Document"
   },
   "totalScore": {
