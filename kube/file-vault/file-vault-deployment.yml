@@ -87,7 +87,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: s3-bucket
-                  key: bucket_name
+                  key: name
             - name: AWS_PASSWORD
               valueFrom:
                 secretKeyRef:
