@@ -14,7 +14,7 @@ environment:
   GIT_REPO: UKHomeOffice/RRA
   HOF_CONFIG: hof-services-config/Recruitment-Retention-Allowance
   PRODUCTION_URL: www.recruitment-retention-allowance.homeoffice.gov.uk
-  NON_PROD_AVAILABILITY: Mon-Sun 08:00-23:00 Europe/London
+  NON_PROD_AVAILABILITY: Mon-Sun 01:00-23:00 Europe/London
   READY_FOR_TEST_DELAY: 20s
 
 trigger:
