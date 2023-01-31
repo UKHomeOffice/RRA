@@ -7,6 +7,9 @@ const _ = require('lodash');
 const sumValues = values => values.map(it => Number(it)).reduce((a, b) => a + b, 0);
 
 module.exports = {
+  'case-reference': {
+    steps: [{ step: '/reference', field: 'reference' }]
+  },
   personalDetails: [
     'name',
     'employmentNumber',

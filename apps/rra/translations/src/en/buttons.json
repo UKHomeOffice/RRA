@@ -7,5 +7,9 @@
     "start-again": "Start again",
     "submit": "Submit",
     "try-again": "Try again",
-    "back": "Back"
+    "back": "Back",
+    "save-and-exit": "Save and exit",
+    "create-application": "Create application",
+    "continue-to-next-question": "Continue to next question",
+    "back-to-reports": "Back to the Applications Dashboard"
   }
