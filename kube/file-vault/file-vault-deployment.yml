@@ -127,7 +127,7 @@ spec:
             - --listen=:10443
             # the url which is used to retrieve the OpenID configuration
             {{ if not (eq .KUBE_NAMESPACE .PROD_ENV) }}
-            - --discovery-url=https://sso.digital.homeoffice.gov.uk/auth/realms/rra-notprod
+            - --discovery-url=https://sso-dev.notprod.homeoffice.gov.uk/auth/realms/rra-notprod
             {{ else }}
             - --discovery-url=https://sso.digital.homeoffice.gov.uk/auth/realms/rra
             {{ end }}
