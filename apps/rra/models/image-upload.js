@@ -89,8 +89,10 @@ module.exports = class UploadModel extends Model {
 
     return new Promise((resolve, reject) => {
       this._request(tokenReq, (err, response) => {
-        if (err) {
-          return reject(err);
+        const body = JSON.parse(response.body);
+
+        if (err || body.error) {
+          return reject(err || new Error(`${body.error} - ${body.error_description}`));
         }
 
         resolve({
