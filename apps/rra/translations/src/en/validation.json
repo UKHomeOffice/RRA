@@ -32,7 +32,7 @@
   },
   "levels": {
     "required": "Please select the proficiency level you are applying for",
-    "notSameOrLower": "The proficiency level must not be the same or lower than you're current proficiency level"
+    "notSameOrLower": "The proficiency level must not be the same or lower than your current proficiency level"
   },
   "skill1": {
     "required": "Please select a skill"
@@ -96,7 +96,7 @@
   },
   "currentLevel": {
     "required": "Please select your current proficiency level",
-    "notSameOrLower": "The proficiency level must not be the same or lower than you're current proficiency level"
+    "notSameOrLower": "The proficiency level must not be the same or lower than your current proficiency level"
 
   },
   "lastAssessmentDate": {

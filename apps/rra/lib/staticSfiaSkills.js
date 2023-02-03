@@ -861,7 +861,7 @@ module.exports = {
       'USEV - User experience evaluation'
     ];
   },
-  getBusinessArchitectureSkills: function () {
+  getStaticBusinessArchitectureSkills: function () {
     return [
       'Design',
       'Architecture Breadth',
@@ -892,7 +892,7 @@ module.exports = {
       'RLMT - Relationship Management'
     ];
   },
-  getDataArchitectureSkills: function () {
+  getStaticDataArchitectureSkills: function () {
     return [
       'INOV - Innovation',
       'ITSP - Strategic planning',
@@ -1078,7 +1078,7 @@ module.exports = {
       'Domain Experience'
     ];
   },
-  getSecurityArchitectureSkills: function () {
+  getStaticSecurityArchitectureSkills: function () {
     return [
       'ITSP - Strategic planning',
       'CNSL - Consultancy',
@@ -1125,7 +1125,7 @@ module.exports = {
       'OCDV - Organisational Capability Development'
     ];
   },
-  getTechnicalArchitectureSkills: function () {
+  getStaticTechnicalArchitectureSkills: function () {
     return [
       'ITSP - Strategic planning',
       'CNSL - Consultancy',
