@@ -13,7 +13,7 @@ spec:
   tls:
   - hosts:
     {{ if eq .KUBE_NAMESPACE .PROD_ENV }}
-    - data-service.additional-security-checks.homeoffice.gov.uk
+    - data-service.rra.homeoffice.gov.uk
     {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
     - stg.data-service.sas.homeoffice.gov.uk
     {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
@@ -28,7 +28,7 @@ spec:
     {{ end }}
   rules:
   {{ if eq .KUBE_NAMESPACE .PROD_ENV }}
-  - host: data-service.additional-security-checks.homeoffice.gov.uk
+  - host: data-service.rra.homeoffice.gov.uk
   {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
   - host: stg.data-service.sas.homeoffice.gov.uk
   {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
