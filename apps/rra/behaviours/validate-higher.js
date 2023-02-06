@@ -1,7 +1,7 @@
 module.exports = SuperClass => class extends SuperClass {
   validate(req, res, next) {
-    const currentLevel = req.form.values.currentRraLevel;
-    const applyingLevel = req.form.values.higherRraLevels;
+    const currentLevel = req.form.values.currentLevel;
+    const applyingLevel = req.form.values.higherLevels;
 
     const sameLevel = currentLevel === applyingLevel;
     // eslint-disable-next-line max-len
@@ -9,14 +9,14 @@ module.exports = SuperClass => class extends SuperClass {
 
     if (sameLevel || lowerLevel) {
       return next({
-        higherRraLevels: new this.ValidationError(
-          'rraLevels',
+        higherLevels: new this.ValidationError(
+          'levels',
           {
             type: 'notSameOrLower'
           }
         ),
-        currentRraLevel: new this.ValidationError(
-          'currentRraLevel',
+        currentLevel: new this.ValidationError(
+          'currentLevel',
           {
             type: 'notSameOrLower'
           }

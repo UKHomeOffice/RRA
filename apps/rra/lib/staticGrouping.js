@@ -3,7 +3,7 @@
 'use strict';
 
 module.exports = {
-  getstaticRraGrouping: function () {
+  getStaticGrouping: function () {
     return [
       {
         value: 'Accessibility and Digital Inclusion',

@@ -1,6 +1,6 @@
 module.exports = {
 
-  getstaticSfiaSkills: function () {
+  getStaticSfiaSkills: function () {
     return [
       // *******************ARCHITECTURE*****************
       // Business Architecture
@@ -841,7 +841,7 @@ module.exports = {
   },
 
   // Individual skills
-  getstaticAccessibilityandDigitalInclusionSfiaSkills: function () {
+  getStaticAccessibilityandDigitalInclusionSfiaSkills: function () {
     return [
       'User Focus',
       'Communicating Information',
@@ -851,7 +851,7 @@ module.exports = {
       'Digital Inclusion'
     ];
   },
-  getstaticBusinessAnalystSfiaSkills: function () {
+  getStaticBusinessAnalystSfiaSkills: function () {
     return [
       'BUAN - Business analysis',
       'BSMO - Business modelling',
@@ -861,7 +861,7 @@ module.exports = {
       'USEV - User experience evaluation'
     ];
   },
-  getBusinessArchitectureSkills: function () {
+  getStaticBusinessArchitectureSkills: function () {
     return [
       'Design',
       'Architecture Breadth',
@@ -872,7 +872,7 @@ module.exports = {
       'Method and Standards Driven Approach'
     ];
   },
-  getstaticContentDesignerSfiaSkills: function () {
+  getStaticContentDesignerSfiaSkills: function () {
     return [
       'Content Design',
       'Negotiating and Influencing',
@@ -882,7 +882,7 @@ module.exports = {
       'Technical Breadth'
     ];
   },
-  getstaticDataAnalystSfiaSkills: function () {
+  getStaticDataAnalystSfiaSkills: function () {
     return [
       'INAN - Analytics',
       'DTAN - Data Modelling and Design',
@@ -892,7 +892,7 @@ module.exports = {
       'RLMT - Relationship Management'
     ];
   },
-  getDataArchitectureSkills: function () {
+  getStaticDataArchitectureSkills: function () {
     return [
       'INOV - Innovation',
       'ITSP - Strategic planning',
@@ -902,7 +902,7 @@ module.exports = {
       'STPL - Enterprise and Business Architecture'
     ];
   },
-  getstaticDataEngineeringSfiaSkills: function () {
+  getStaticDataEngineeringSfiaSkills: function () {
     return [
       'INOV - Innovation',
       'DTAN - Data Modelling and Design',
@@ -912,7 +912,7 @@ module.exports = {
       'DBAD - Database Administration'
     ];
   },
-  getstaticDataScienceSfiaSkills: function () {
+  getStaticDataScienceSfiaSkills: function () {
     return [
       'INOV - Innovation',
       'INAN - Analytics',
@@ -922,7 +922,7 @@ module.exports = {
       'Achieve Impact with Analysis'
     ];
   },
-  getstaticDeliverAndSupportSfiaSkills: function () {
+  getStaticDeliverAndSupportSfiaSkills: function () {
     return [
       'KNOW - Knowledge Management',
       'SLMO - Service Level Management',
@@ -943,7 +943,7 @@ module.exports = {
       'Governance'
     ];
   },
-  getstaticDesignAndTransitionSfiaSkills: function () {
+  getStaticDesignAndTransitionSfiaSkills: function () {
     return [
       'ITMG - IT Management',
       'BUAN - Business Analysis',
@@ -957,7 +957,7 @@ module.exports = {
       'RELM - Release Management'
     ];
   },
-  getstaticEngineeringLeadershipSfiaSkills: function () {
+  getStaticEngineeringLeadershipSfiaSkills: function () {
     return [
       'DLMG - Systems Development Management',
       'PROG - Programming/Software Development',
@@ -967,7 +967,7 @@ module.exports = {
       'QUMG - Quality Management'
     ];
   },
-  getstaticHeadOfRoleForDataSfiaSkills: function () {
+  getStaticHeadOfRoleForDataSfiaSkills: function () {
     return [
       'INAN - Analytics',
       'INOV - Innovation',
@@ -977,7 +977,7 @@ module.exports = {
       'RLMT - Relationship Management'
     ];
   },
-  getstaticHeadOfRoleForEngineeringSfiaSkills: function () {
+  getStaticHeadOfRoleForEngineeringSfiaSkills: function () {
     return [
       'PROG - Programming/Software Development',
       'SWDN - Software Design',
@@ -987,7 +987,7 @@ module.exports = {
       'OCDV - Organisational Capability Development'
     ];
   },
-  getstaticInteractionDesignerSfiaSkills: function () {
+  getStaticInteractionDesignerSfiaSkills: function () {
     return [
       'Interaction Design',
       'User Centred Design',
@@ -998,7 +998,7 @@ module.exports = {
       'Technical Breadth'
     ];
   },
-  getstaticInfrastructureEngineeringSfiaSkills: function () {
+  getStaticInfrastructureEngineeringSfiaSkills: function () {
     return [
       'ITMG - IT management',
       'DESN - Systems design',
@@ -1008,7 +1008,7 @@ module.exports = {
       'USUP - Incident management'
     ];
   },
-  getstaticItOperationsLeadershipSfiaSkills: function () {
+  getStaticItOperationsLeadershipSfiaSkills: function () {
     return [
       'TECH - Specialist Advise',
       'SLMO - Service Level Management',
@@ -1021,7 +1021,7 @@ module.exports = {
       'RESC - Resourcing'
     ];
   },
-  getstaticNetworkingEngineeringSfiaSkills: function () {
+  getStaticNetworkingEngineeringSfiaSkills: function () {
     return [
       'TECH - Specialist Advise',
       'ITMG - IT management',
@@ -1031,7 +1031,7 @@ module.exports = {
       'USUP - Incident management'
     ];
   },
-  getstaticPerformanceAnalysisSfiaSkills: function () {
+  getStaticPerformanceAnalysisSfiaSkills: function () {
     return [
       'TECH - Specialist Advice',
       'INAN - Analytics',
@@ -1041,7 +1041,7 @@ module.exports = {
       'DATM - Data Management'
     ];
   },
-  getstaticPlanEngageAndImproveSfiaSkills: function () {
+  getStaticPlanEngageAndImproveSfiaSkills: function () {
     return [
       'TECH - Specialist Advise',
       'SLMO - Service Level Management',
@@ -1058,7 +1058,7 @@ module.exports = {
       'DEMM - Demand Management'
     ];
   },
-  getstaticProductManagerSfiaSkills: function () {
+  getStaticProductManagerSfiaSkills: function () {
     return [
       'BPRE - Business process improvement',
       'INOV - Innovation',
@@ -1068,7 +1068,7 @@ module.exports = {
       'UNAN - User experience analysis'
     ];
   },
-  getstaticQualityAssuranceAndTestingSfiaSkills: function () {
+  getStaticQualityAssuranceAndTestingSfiaSkills: function () {
     return [
       'ITSP - Strategic planning',
       'Test Analysis, Design and Execution',
@@ -1078,7 +1078,7 @@ module.exports = {
       'Domain Experience'
     ];
   },
-  getSecurityArchitectureSkills: function () {
+  getStaticSecurityArchitectureSkills: function () {
     return [
       'ITSP - Strategic planning',
       'CNSL - Consultancy',
@@ -1088,7 +1088,7 @@ module.exports = {
       'ARCH - Solution Architecture'
     ];
   },
-  getstaticSecurityEngineeringSfiaSkills: function () {
+  getStaticSecurityEngineeringSfiaSkills: function () {
     return [
       'SCAD - Security Administration',
       'USUP - Incident management',
@@ -1098,7 +1098,7 @@ module.exports = {
       'DGFS - Digital Forensics'
     ];
   },
-  getstaticServiceSfiaSkills: function () {
+  getStaticServiceSfiaSkills: function () {
     return [
       'Service Analysis',
       'User Centred Design',
@@ -1108,7 +1108,7 @@ module.exports = {
       'Technical Breadth'
     ];
   },
-  getstaticSoftwareAndDevOpsSfiaSkills: function () {
+  getStaticSoftwareAndDevOpsSfiaSkills: function () {
     return [
       'DATM - Data Management',
       'ASUP - Application Support',
@@ -1125,7 +1125,7 @@ module.exports = {
       'OCDV - Organisational Capability Development'
     ];
   },
-  getTechnicalArchitectureSkills: function () {
+  getStaticTechnicalArchitectureSkills: function () {
     return [
       'ITSP - Strategic planning',
       'CNSL - Consultancy',
@@ -1135,7 +1135,7 @@ module.exports = {
       'ARCH - Solution Architecture'
     ];
   },
-  getstaticUserResearcherSfiaSkills: function () {
+  getStaticUserResearcherSfiaSkills: function () {
     return [
       'Research Methods',
       'Analysing and Sharing Research',

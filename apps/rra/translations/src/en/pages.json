@@ -5,7 +5,7 @@
   "token-invalid": {
     "header": "That link has expired"
   },
-  "rraLogin": {
+  "login": {
     "header": "Login in to your RRA account"
   },
   "personalDetails": {
@@ -74,10 +74,10 @@
   "cpd":{
     "header": "Professional Development"
   },
-  "rraSupportingDocumentsUpload": {
+  "supportingDocumentsUpload": {
     "header": "Do you want to upload a supporting document?"
   },
-  "rraSupportingDocumentsUploadConfirm": {
+  "supportingDocumentsUploadConfirm": {
     "header": "Do you want to add another supporting document?"
   },
   "totalScore": {

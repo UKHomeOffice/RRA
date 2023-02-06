@@ -3,7 +3,7 @@
  'use strict';
 
  module.exports = {
-   getstaticRraGrades: function () {
+   getStaticGrades: function () {
      return [
        { value: 'HEO',
          label: 'HEO'

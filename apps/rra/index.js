@@ -12,7 +12,7 @@ const unsetValue = require('./behaviours/unset-value');
 const checkDeviceType = require('./behaviours/check-device-type');
 const skipStep = require('./behaviours/skip-step');
 const checkAnswers = require('./behaviours/check-answers');
-const resetJourneyToSubmitRRA = require('./behaviours/reset-journey-to-submit-rra');
+const resetJourneyToSubmit = require('./behaviours/reset-journey-to-submit');
 const higherApp = require('./behaviours/higher-app');
 const setAppType = require('./behaviours/set-app-type');
 const validateHigherLevel = require('./behaviours/validate-higher');
@@ -35,7 +35,7 @@ module.exports = {
     '/applied-before': {
       behaviours: [
         higherApp,
-        resetJourneyToSubmitRRA
+        resetJourneyToSubmit
       ],
       fields: ['appliedBefore'],
       next: '/personalDetails',
@@ -45,10 +45,10 @@ module.exports = {
     '/personalDetails': {
       behaviours: [
         setAppType,
-        resetJourneyToSubmitRRA,
+        resetJourneyToSubmit,
         validateDomain
       ],
-      fields: ['rraName', 'rraEmployeeNumber','rraFunction', 'user-email', 'rraManagerEmail'],
+      fields: ['name', 'employmentNumber','function', 'user-email', 'managerEmail'],
       forks: [{
         target: '/higherProfessionDetails',
         condition: req => {
@@ -58,52 +58,52 @@ module.exports = {
       next: '/professionDetails'
     },
     '/professionDetails': {
-      fields: ['rraRole', 'rraGrouping', 'rraGrade', 'rraLevels'],
+      fields: ['role', 'grouping', 'grade', 'levels'],
       next: '/skill1',
       continueOnEdit: true
     },
     '/skill1': {
       behaviours: [SkillBehaviour],
-      fields: ['rraSkill', 'rraScores', 'rraEvidence'],
+      fields: ['skill1', 'scores1', 'evidence1'],
       next: '/skill2',
       continueOnEdit: true
     },
     '/skill2': {
       behaviours: [SkillBehaviour],
-      fields: ['rraSkill2', 'rraScores2', 'rraEvidence2'],
+      fields: ['skill2', 'scores2', 'evidence2'],
       next: '/skill3',
       continueOnEdit: true
     },
     '/skill3': {
       behaviours: [SkillBehaviour],
-      fields: ['rraSkill3', 'rraScores3', 'rraEvidence3'],
+      fields: ['skill3', 'scores3', 'evidence3'],
       next: '/skill4',
       continueOnEdit: true
     },
     '/skill4': {
       behaviours: [SkillBehaviour],
-      fields: ['rraSkill4', 'rraScores4', 'rraEvidence4'],
+      fields: ['skill4', 'scores4', 'evidence4'],
       next: '/skill5',
       continueOnEdit: true
     },
     '/skill5': {
       behaviours: [SkillBehaviour],
-      fields: ['rraSkill5', 'rraScores5', 'rraEvidence5'],
+      fields: ['skill5', 'scores5', 'evidence5'],
       next: '/skill6',
       continueOnEdit: true
     },
     '/skill6': {
       behaviours: [SkillBehaviour],
-      fields: ['rraSkill6', 'rraScores6', 'rraEvidence6'],
+      fields: ['skill6', 'scores6', 'evidence6'],
       next: '/qualifications'
     },
     '/qualifications': {
       fields: ['qualifications'],
-      next: '/rraSupportingDocumentsUpload'
+      next: '/supportingDocumentsUpload'
     },
     '/higherProfessionDetails': {
       behaviours: [validateHigherLevel],
-      fields: ['higherRraRole', 'higherRraGrouping', 'higherRraGrade','currentRraLevel', 'higherRraLevels'],
+      fields: ['higherRole', 'higherGrouping', 'higherGrade','currentLevel', 'higherLevels'],
       next: '/lastAssessmentDate',
       continueOnEdit: true
     },
@@ -119,90 +119,90 @@ module.exports = {
     },
     '/higherSkill1': {
       behaviours: [higherSkillBehaviour],
-      fields: ['higherRraSkill', 'higherRraScores', 'higherRraEvidence'],
+      fields: ['higherSkill1', 'higherScores1', 'higherEvidence1'],
       next: '/higherSkill2',
       continueOnEdit: true
     },
     '/higherSkill2': {
       behaviours: [higherSkillBehaviour],
-      fields: ['higherRraSkill2', 'higherRraScores2', 'higherRraEvidence2'],
+      fields: ['higherSkill2', 'higherScores2', 'higherEvidence2'],
       next: '/higherSkill3',
       continueOnEdit: true
     },
     '/higherSkill3': {
       behaviours: [higherSkillBehaviour],
-      fields: ['higherRraSkill3', 'higherRraScores3', 'higherRraEvidence3'],
+      fields: ['higherSkill3', 'higherScores3', 'higherEvidence3'],
       next: '/higherSkill4',
       continueOnEdit: true
     },
     '/higherSkill4': {
       behaviours: [higherSkillBehaviour],
-      fields: ['higherRraSkill4', 'higherRraScores4', 'higherRraEvidence4'],
+      fields: ['higherSkill4', 'higherScores4', 'higherEvidence4'],
       next: '/higherSkill5',
       continueOnEdit: true
     },
     '/higherSkill5': {
       behaviours: [higherSkillBehaviour],
-      fields: ['higherRraSkill5', 'higherRraScores5', 'higherRraEvidence5'],
+      fields: ['higherSkill5', 'higherScores5', 'higherEvidence5'],
       next: '/higherSkill6',
       continueOnEdit: true
     },
     '/higherSkill6': {
       behaviours: [higherSkillBehaviour],
-      fields: ['higherRraSkill6', 'higherRraScores6', 'higherRraEvidence6'],
+      fields: ['higherSkill6', 'higherScores6', 'higherEvidence6'],
       next: '/cpd'
     },
     '/cpd': {
       fields: ['cpdDescription'],
       continueOnEdit: true,
-      next: '/rraSupportingDocumentsUpload'
+      next: '/supportingDocumentsUpload'
     },
-    '/rraSupportingDocumentsUpload': {
+    '/supportingDocumentsUpload': {
       fields: [
-        'rraSupportingDocuments',
-        'rraSupportingDocumentsUpload',
+        'supportingDocuments',
+        'supportingDocumentsUpload',
       ],
       forks: [
         {
-          target: '/rraSupportingDocumentsUploadConfirm',
+          target: '/supportingDocumentsUploadConfirm',
           condition: {
-            field: 'rraSupportingDocumentsUpload',
+            field: 'supportingDocumentsUpload',
             value: 'yes'
           }
         },
         {
           target: '/confirm',
           condition: {
-            field: 'rraSupportingDocumentsUpload',
+            field: 'supportingDocumentsUpload',
             value: 'no'
           }
         }
       ],
-      behaviours: [skipStep, saveImage('rraSupportingDocuments'), checkDeviceType],
+      behaviours: [skipStep, saveImage('supportingDocuments'), checkDeviceType],
       continueOnEdit: true
     },
-    '/rraSupportingDocumentsUploadConfirm': {
+    '/supportingDocumentsUploadConfirm': {
       fields: [
-        'rraSupportingDocumentsUploadMore',
-        'anotherRraSupportingDocuments'
+        'supportingDocumentsUploadMore',
+        'anotherSupportingDocuments'
       ],
       forks: [
         {
-          target: '/rraSupportingDocumentsUploadConfirm',
+          target: '/supportingDocumentsUploadConfirm',
           condition: {
-            field: 'rraSupportingDocumentsUploadMore',
+            field: 'supportingDocumentsUploadMore',
             value: 'yes'
           }
         },
         {
           target: '/confirm',
           condition: {
-            field: 'rraSupportingDocumentsUploadMore',
+            field: 'supportingDocumentsUploadMore',
             value: 'no'
           }
         }
       ],
-      behaviours: [saveImage('anotherRraSupportingDocuments'), removeImage, unsetValue('rraSupportingDocumentsUploadMore'), limitDocs]
+      behaviours: [saveImage('anotherSupportingDocuments'), removeImage, unsetValue('supportingDocumentsUploadMore'), limitDocs]
     },
     '/confirm': {
       behaviours: [checkAnswers, SummaryPageBehaviour, EmailBehaviour, 'complete'],

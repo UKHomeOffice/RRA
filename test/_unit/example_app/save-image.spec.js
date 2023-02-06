@@ -21,7 +21,7 @@ describe.only("apps/rra 'save-image' behaviour should ", () => {
   let instance;
 
   const imageFiles = {
-    rraSupportingDocuments: {
+    supportingDocuments: {
       name: 'test1.png',
       encoding: '7bit',
       mimetype: 'png',
@@ -39,7 +39,7 @@ describe.only("apps/rra 'save-image' behaviour should ", () => {
   describe("The save-image ' process ' method", () => {
     before(() => {
       sinon.stub(Base.prototype, 'process');
-      instance = new (Behaviour('rraSupportingDocuments')(Base))();
+      instance = new (Behaviour('supportingDocuments')(Base))();
     });
 
     it('should be called ', () => {
@@ -56,7 +56,7 @@ describe.only("apps/rra 'save-image' behaviour should ", () => {
     it('should add files to form.values', () => {
       req.files.images = imageFiles;
       instance.process(req);
-      expect(req.form.values.rraSupportingDocuments).to.eql('test1.png');
+      expect(req.form.values.supportingDocuments).to.eql('test1.png');
     });
 
     after(() => {
@@ -76,7 +76,7 @@ describe.only("apps/rra 'save-image' behaviour should ", () => {
       expect(Base.prototype.locals).to.have.been.called;
     });
 
-    it("should not return null to 'rraSupportingDocumentsUpload' on request form values if errors", () => {
+    it("should not return null to 'supportingDocumentsUpload' on request form values if errors", () => {
       req.form.errors = { error: 'err' };
       instance.locals(req, res, next);
       expect(req.form.values.rraSuppotingDocumentsUpload).to.not.eql(null);
@@ -86,7 +86,7 @@ describe.only("apps/rra 'save-image' behaviour should ", () => {
     it("should return null to 'rraSuppotingDocumentsUpload' on request form values if there are no errors", () => {
       req.form.errors = {};
       instance.locals(req, res, next);
-      expect(req.form.values.rraSupportingDocumentsUpload).to.eql(null);
+      expect(req.form.values.supportingDocumentsUpload).to.eql(null);
     });
 
     after(() => {
@@ -109,7 +109,7 @@ describe.only("apps/rra 'save-image' behaviour should ", () => {
       req.sessionModel.set('images', imageFiles);
       instance.saveValues(req, res, next);
       const sessionModel = req.sessionModel.get('images');
-      expect(sessionModel.rraSupportingDocuments.name).to.eql('test1.png');
+      expect(sessionModel.supportingDocuments.name).to.eql('test1.png');
     });
 
     after(() => {

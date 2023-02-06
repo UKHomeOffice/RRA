@@ -1,147 +1,147 @@
 'use strict';
 
-const RRA_GROUPING = require('../lib/staticRraGrouping').getstaticRraGrouping();
-const APPLY_RRA_LEVELS = require('../lib/staticRraLevels').getstaticApplyRraLevels();
-const RRA_SCORES = require('../lib/staticRraScores').getstaticRraScores();
+const RRA_GROUPING = require('../lib/staticGrouping').getStaticGrouping();
+const APPLY_RRA_LEVELS = require('../lib/staticLevels').getStaticApplyLevels();
+const RRA_SCORES = require('../lib/staticScores').getStaticScores();
 const _ = require('lodash');
 const sumValues = values => values.map(it => Number(it)).reduce((a, b) => a + b, 0);
 
 module.exports = {
   personalDetails: [
-    'rraName',
-    'rraEmployeeNumber',
-    'rraFunction',
+    'name',
+    'employmentNumber',
+    'function',
     'user-email',
-    'rraManagerEmail'
+    'managerEmail'
   ],
   appliedBefore: [
     'appliedBefore'
   ],
   professionDetails: [
-    'rraRole',
+    'role',
     {
-      field: 'rraGrouping',
+      field: 'grouping',
       parse: v => _.get(_.find(RRA_GROUPING, group => group.value === v), 'label', '')
     },
-    'rraGrade',
+    'grade',
     {
-      field: 'rraLevels',
+      field: 'levels',
       parse: v => _.get(_.find(APPLY_RRA_LEVELS, group => group.value === v), 'label', '')
     }
   ],
   skill1: [
-    'rraSkill',
+    'skill1',
     {
-      field: 'rraScores',
+      field: 'scores1',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'rraEvidence'
+    'evidence1'
   ],
   skill2: [
-    'rraSkill2',
+    'skill2',
     {
-      field: 'rraScores2',
+      field: 'scores2',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'rraEvidence2'
+    'evidence2'
   ],
   skill3: [
-    'rraSkill3',
+    'skill3',
     {
-      field: 'rraScores3',
+      field: 'scores3',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'rraEvidence3'
+    'evidence3'
   ],
   skill4: [
-    'rraSkill4',
+    'skill4',
     {
-      field: 'rraScores4',
+      field: 'scores4',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'rraEvidence4'
+    'evidence4'
   ],
   skill5: [
-    'rraSkill5',
+    'skill5',
     {
-      field: 'rraScores5',
+      field: 'scores5',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'rraEvidence5'
+    'evidence5'
   ],
   skill6: [
-    'rraSkill6',
+    'skill6',
     {
-      field: 'rraScores6',
+      field: 'scores6',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'rraEvidence6'
+    'evidence6'
   ],
   qualifications: [
     'qualifications'
   ],
   higherProfessionDetails: [
-    'higherRraRole',
+    'higherRole',
     {
-      field: 'higherRraGrouping',
+      field: 'higherGrouping',
       parse: v => _.get(_.find(RRA_GROUPING, group => group.value === v), 'label', '')
     },
-    'higherRraGrade',
-    'currentRraLevel',
+    'higherGrade',
+    'currentLevel',
     'lastAssessmentDate',
     'previousScore',
     {
-      field: 'higherRraLevels',
+      field: 'higherLevels',
       parse: v => _.get(_.find(APPLY_RRA_LEVELS, group => group.value === v), 'label', '')
     }
   ],
   higherSkill1: [
-    'higherRraSkill',
+    'higherSkill1',
     {
-      field: 'higherRraScores',
+      field: 'higherScores1',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'higherRraEvidence'
+    'higherEvidence1'
   ],
   higherSkill2: [
-    'higherRraSkill2',
+    'higherSkill2',
     {
-      field: 'higherRraScores2',
+      field: 'higherScores2',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'higherRraEvidence2'
+    'higherEvidence2'
   ],
   higherSkill3: [
-    'higherRraSkill3',
+    'higherSkill3',
     {
-      field: 'higherRraScores3',
+      field: 'higherScores3',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'higherRraEvidence3'
+    'higherEvidence3'
   ],
   higherSkill4: [
-    'higherRraSkill4',
+    'higherSkill4',
     {
-      field: 'higherRraScores4',
+      field: 'higherScores4',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'higherRraEvidence4'
+    'higherEvidence4'
   ],
   higherSkill5: [
-    'higherRraSkill5',
+    'higherSkill5',
     {
-      field: 'higherRraScores5',
+      field: 'higherScores5',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'higherRraEvidence5'
+    'higherEvidence5'
   ],
   higherSkill6: [
-    'higherRraSkill6',
+    'higherSkill6',
     {
-      field: 'higherRraScores6',
+      field: 'higherScores6',
       parse: v => _.get(_.find(RRA_SCORES, group => group.value === v), 'label', '')
     },
-    'higherRraEvidence6'
+    'higherEvidence6'
   ],
   cpd: [
     'cpdDescription'
@@ -151,18 +151,18 @@ module.exports = {
       field: 'totalScore',
       derivation: {
         fromFields: [
-          'rraScores',
-          'rraScores2',
-          'rraScores3',
-          'rraScores4',
-          'rraScores5',
-          'rraScores6',
-          'higherRraScores',
-          'higherRraScores2',
-          'higherRraScores3',
-          'higherRraScores4',
-          'higherRraScores5',
-          'higherRraScores6'
+          'scores1',
+          'scores2',
+          'scores3',
+          'scores4',
+          'scores5',
+          'scores6',
+          'higherScores1',
+          'higherScores2',
+          'higherScores3',
+          'higherScores4',
+          'higherScores5',
+          'higherScores6'
         ],
         combiner: sumValues
       }
