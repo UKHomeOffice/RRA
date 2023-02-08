@@ -28,8 +28,6 @@ export DRONE_SOURCE_BRANCH=$(echo $DRONE_SOURCE_BRANCH | tr '[:upper:]' '[:lower
 
 if [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
   # $kd -f kube/file-vault/file-vault-ingress.yml # deploy ingress first so file-vault can use its tls-secret in its keycloak certs
-  $kd --delete -f kube/jobs/ms-schema-job.yml
-  $kd -f kube/jobs/ms-schema-job.yml
   $kd -f kube/configmaps -f kube/certs
   $kd -f kube/save-return-data
   $kd -f kube/redis -f kube/app
