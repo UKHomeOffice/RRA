@@ -3,9 +3,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-  name: {{ .APP_NAME }}-configmap-{{ .DRONE_SOURCE_BRANCH }}
+  name: configmap-{{ .DRONE_SOURCE_BRANCH }}
   {{ else }}
-  name: {{ .APP_NAME }}-configmap
+  name: configmap-{{ .DRONE_SOURCE_BRANCH }}
   {{ end }}
   namespace: {{ .KUBE_NAMESPACE }}
   labels:
