@@ -65,7 +65,6 @@ module.exports = {
       behaviours: [
         higherApp,
         resetJourneyToSubmit,
-        resetJourneyToSubmitRRA,
         SaveFormSession
       ],
       fields: ['appliedBefore'],
@@ -79,7 +78,6 @@ module.exports = {
         setAppType,
         resetJourneyToSubmit,
         validateDomain,
-        resetJourneyToSubmitRRA,
         validateDomain,
         SaveFormSession
       ],
