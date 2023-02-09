@@ -14,22 +14,22 @@ spec:
             - name: HOF_USER_PASS
               valueFrom:
                 secretKeyRef:
-                  name: rranotprod
+                  name: users
                   key: hof
             - name: RESOLVER_USER_PASS
               valueFrom:
                 secretKeyRef:
-                  name: rranotprod
+                  name: users
                   key: resolver
             - name: GRAFANA_USER_PASS
               valueFrom:
                 secretKeyRef:
-                  name: rranotprod
+                  name: users
                   key: grafana
             - name: REPORTS_USER_PASS
               valueFrom:
                 secretKeyRef:
-                  name: rranotprod
+                  name: users
                   key: reports
             - name: DB_HOST
               valueFrom:
