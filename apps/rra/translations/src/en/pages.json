@@ -8,6 +8,18 @@
   "login": {
     "header": "Login in to your RRA account"
   },
+  "reports": {
+    "header": "Draft applications"
+  },
+  "continue-report": {
+    "header": "Current progress"
+  },
+  "save-and-exit": {
+    "header": "Your application has been saved"
+  },
+  "are-you-sure": {
+    "header": "Delete application"
+  },
   "personalDetails": {
     "header": "Personal Details"
   },
@@ -87,6 +99,9 @@
     "header": "Check your answers before submitting your application.",
     "undefined": "None given",
     "sections": {
+      "case-reference": {
+        "header": "Application details"
+      },
       "applicantsDetails": {
         "header": "Applicant's details"
       },

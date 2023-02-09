@@ -23,6 +23,10 @@ module.exports = {
   managerEmail: {
     validate: ['required', 'email']
   },
+  reference: {
+    isPageHeading: true,
+    validate: 'required'
+  },
   appliedBefore: {
     isPageHeading: true,
     mixin: 'radio-group',
