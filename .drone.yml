@@ -124,24 +124,24 @@ steps:
           - feature/*
       event: [push, pull_request]
 
-  # # Deploy to pull request UAT environment
-  # - name: deploy_to_branch
-  #   pull: if-not-exists
-  #   image: quay.io/ukhomeofficedigital/kd:v1.14.0
-  #   environment:
-  #     # NOTIFY_STUB: stub
-  #     KUBE_SERVER:
-  #       from_secret: kube_server_dev
-  #     KUBE_TOKEN:
-  #       from_secret: kube_token_dev
-  #   commands:
-  #     - bin/deploy.sh $${BRANCH_ENV}
-  #   when:
-  #     # branch: main
-  #     branch:
-  #       include:
-  #         - main
-  #     event: [pull_request, push]
+   # Deploy to pull request UAT environment
+   - name: deploy_to_branch
+     pull: if-not-exists
+     image: quay.io/ukhomeofficedigital/kd:v1.14.0
+     environment:
+       # NOTIFY_STUB: stub
+       KUBE_SERVER:
+         from_secret: kube_server_dev
+       KUBE_TOKEN:
+         from_secret: kube_token_dev
+     commands:
+       - bin/deploy.sh $${BRANCH_ENV}
+     when:
+       # branch: main
+       branch:
+         include:
+           - main
+       event: [pull_request, push]
 
   # Deploy to Master UAT environment
   - name: deploy_to_uat
@@ -158,7 +158,6 @@ steps:
       branch:
         include:
           - main
-          - feature/*
       event: [pull_request, push]
 
   # - name: setup_branch
