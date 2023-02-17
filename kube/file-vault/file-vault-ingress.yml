@@ -1,5 +1,5 @@
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
@@ -13,39 +13,39 @@ spec:
   ingressClassName: nginx-external
   {{ end }}
   tls:
-  - hosts:
-    {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-    - fv-{{ .DRONE_BUILD_NUMBER }}.{{ .BRANCH_ENV }}.homeoffice.gov.uk
-    - fv-{{ .DRONE_SOURCE_BRANCH }}.{{ .BRANCH_ENV }}.homeoffice.gov.uk
-    {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-    - fv-rra.uat.sas-notprod.homeoffice.gov.uk
-    {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
-    - fv-rra.stg.sas.homeoffice.gov.uk
-    {{ else if eq .KUBE_NAMESPACE .PROD_ENV }}
-    - fv-rra.homeoffice.gov.uk
-    {{ end }}
-    {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-    secretName: branch-tls-external
-    {{ else }}
-    secretName: file-vault-cert
-    {{ end }}
+    - hosts:
+      {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
+      - fv-{{ .DRONE_BUILD_NUMBER }}.{{ .BRANCH_ENV }}.homeoffice.gov.uk
+      - fv-{{ .DRONE_SOURCE_BRANCH }}.{{ .BRANCH_ENV }}.homeoffice.gov.uk
+      {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
+      - fv-rra.uat.sas-notprod.homeoffice.gov.uk
+      {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
+      - fv-rra.stg.sas.homeoffice.gov.uk
+      {{ else if eq .KUBE_NAMESPACE .PROD_ENV }}
+      - fv-rra.homeoffice.gov.uk
+      {{ end }}
+      {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
+      secretName: branch-tls-external
+      {{ else }}
+      secretName: file-vault-cert
+      {{ end }}
   rules:
-  {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-  - host: fv-{{ .DRONE_SOURCE_BRANCH }}.{{ .BRANCH_ENV }}.homeoffice.gov.uk
-  {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-  - host: fv-rra.uat.sas-notprod.homeoffice.gov.uk
-  {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
-  - host: fv-rra.stg.sas.homeoffice.gov.uk
-  {{ else if eq .KUBE_NAMESPACE .PROD_ENV }}
-  - host: fv-rra.homeoffice.gov.uk
-  {{ end }}
-    http:
-      paths:
-      - path: /
-        backend:
-          {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-          serviceName: file-vault-{{ .DRONE_SOURCE_BRANCH }}
-          {{ else }}
-          serviceName: file-vault
-          {{ end }}
-          servicePort: 10443
+    {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
+    - host: fv-{{ .DRONE_SOURCE_BRANCH }}.{{ .BRANCH_ENV }}.homeoffice.gov.uk
+    {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
+    - host: fv-rra.uat.sas-notprod.homeoffice.gov.uk
+    {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
+    - host: fv-rra.stg.sas.homeoffice.gov.uk
+    {{ else if eq .KUBE_NAMESPACE .PROD_ENV }}
+    - host: fv-rra.homeoffice.gov.uk
+    {{ end }}
+      http:
+        paths:
+        - path: /
+          backend:
+            {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
+            serviceName: file-vault-{{ .DRONE_SOURCE_BRANCH }}
+            {{ else }}
+            serviceName: file-vault
+            {{ end }}
+            servicePort: 10443
