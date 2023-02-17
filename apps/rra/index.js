@@ -10,7 +10,6 @@ const limitDocs = require('./behaviours/limit-documents');
 const removeImage = require('./behaviours/remove-image');
 const unsetValue = require('./behaviours/unset-value');
 const checkDeviceType = require('./behaviours/check-device-type');
-const skipStep = require('./behaviours/skip-step');
 const checkAnswers = require('./behaviours/check-answers');
 const resetJourneyToSubmit = require('./behaviours/reset-journey-to-submit');
 const higherApp = require('./behaviours/higher-app');
@@ -99,7 +98,7 @@ module.exports = {
     },
     '/qualifications': {
       fields: ['qualifications'],
-      next: '/supportingDocumentsUpload'
+      next: '/supporting-documents-upload'
     },
     '/higherProfessionDetails': {
       behaviours: [validateHigherLevel],
@@ -155,54 +154,54 @@ module.exports = {
     '/cpd': {
       fields: ['cpdDescription'],
       continueOnEdit: true,
-      next: '/supportingDocumentsUpload'
+      next: '/supporting-documents-upload'
     },
-    '/supportingDocumentsUpload': {
+    '/supporting-documents-upload': {
+      behaviours: [saveImage('supporting-documents'), checkDeviceType],
       fields: [
-        'supportingDocuments',
-        'supportingDocumentsUpload',
+        'supporting-documents',
+        'supporting-documents-upload',
       ],
       forks: [
         {
-          target: '/supportingDocumentsUploadConfirm',
+          target: '/supporting-documents-upload-confirm',
           condition: {
-            field: 'supportingDocumentsUpload',
+            field: 'supporting-documents-upload',
             value: 'yes'
           }
         },
         {
           target: '/confirm',
           condition: {
-            field: 'supportingDocumentsUpload',
+            field: 'supporting-documents-upload',
             value: 'no'
           }
         }
       ],
-      behaviours: [skipStep, saveImage('supportingDocuments'), checkDeviceType],
       continueOnEdit: true
     },
-    '/supportingDocumentsUploadConfirm': {
+    '/supporting-documents-upload-confirm': {
       fields: [
-        'supportingDocumentsUploadMore',
-        'anotherSupportingDocuments'
+        'supporting-documents-upload-more',
+        'another-supporting-document'
       ],
       forks: [
         {
-          target: '/supportingDocumentsUploadConfirm',
+          target: '/supporting-documents-upload-confirm',
           condition: {
-            field: 'supportingDocumentsUploadMore',
+            field: 'supporting-documents-upload-more',
             value: 'yes'
           }
         },
         {
           target: '/confirm',
           condition: {
-            field: 'supportingDocumentsUploadMore',
+            field: 'supporting-documents-upload-more',
             value: 'no'
           }
         }
       ],
-      behaviours: [saveImage('anotherSupportingDocuments'), removeImage, unsetValue('supportingDocumentsUploadMore'), limitDocs]
+      behaviours: [saveImage('another-supporting-document'), removeImage, unsetValue('supporting-documents-upload-more'), limitDocs]
     },
     '/confirm': {
       behaviours: [checkAnswers, SummaryPageBehaviour, EmailBehaviour, 'complete'],

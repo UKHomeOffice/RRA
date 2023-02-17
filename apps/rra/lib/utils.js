@@ -11,7 +11,9 @@ const sendEmail = (data, reference) => {
   if (!data.images) {
     document = 'None given';
   } else {
-    document = data.images.map(docs => { return docs.name; });
+    document = data.images.map(docs => {
+      return `Name: ${docs.name}\nLink: ${docs.url}`;
+    });
   }
 
   if (data.appliedBefore === 'no') {

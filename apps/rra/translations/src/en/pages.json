@@ -74,10 +74,10 @@
   "cpd":{
     "header": "Professional Development"
   },
-  "supportingDocumentsUpload": {
+  "supporting-documents-upload": {
     "header": "Do you want to upload a supporting document?"
   },
-  "supportingDocumentsUploadConfirm": {
+  "supporting-documents-upload-confirm": {
     "header": "Do you want to add another supporting document?"
   },
   "totalScore": {

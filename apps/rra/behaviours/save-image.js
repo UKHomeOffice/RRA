@@ -20,7 +20,7 @@ module.exports = name => superclass => class extends superclass {
 
   locals(req, res, next) {
     if (!Object.keys(req.form.errors).length) {
-      req.form.values.supportingDocumentsUpload = null;
+      req.form.values['supporting-documents-upload'] = null;
     }
     return super.locals(req, res, next);
   }
@@ -31,6 +31,7 @@ module.exports = name => superclass => class extends superclass {
       req.log('info', `Reference: ${req.sessionModel.get('reference')}, Saving image: ${req.files[name].name}`);
       const image = _.pick(req.files[name], ['name', 'data', 'mimetype']);
       const model = new Model(image);
+
       return model.save()
         .then(() => {
           req.sessionModel.set('images', [...images, model.toJSON()]);

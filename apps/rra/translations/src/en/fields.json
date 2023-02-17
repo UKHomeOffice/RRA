@@ -274,7 +274,7 @@
     "label": "Professional Development in last 12 months",
     "hint":"Please include any qualifications"
   },
-  "supportingDocumentsUpload": {
+  "supporting-documents-upload": {
     "hint": "You can provide no more than 6 products / documents (e.g. a business case, a MS Project Plan) that you have completed.",
     "options": {
       "yes": {
@@ -288,10 +288,10 @@
       "required": "Select whether you have some evidence you want to upload"
     }
   },
-  "supportingDocuments": {
+  "supporting-documents": {
     "label": "Supporting Document"
   },
-  "supportingDocumentsUploadMore": {
+  "supporting-documents-upload-more": {
     "hint": "You can provide no more than 6 products / documents (e.g. a business case, a MS Project Plan) that you have completed.",
     "options": {
       "yes": {
@@ -309,7 +309,7 @@
   "images": {
     "label": "Supporting Documents"
   },
-  "anotherSupportingDocuments": {
+  "another-supporting-document": {
     "label": "Supporting Document"
   },
   "totalScore": {
