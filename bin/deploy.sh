@@ -30,10 +30,10 @@ if [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
   $kd -f kube/configmaps -f kube/certs
   $kd -f kube/redis -f kube/file-vault -f kube/app
 elif [[ ${KUBE_NAMESPACE} == ${UAT_ENV} ]]; then
-  # $kd -f kube/file-vault/file-vault-ingress.yml
+  $kd -f kube/file-vault/file-vault-ingress.yml
   $kd -f kube/configmaps/configmap.yml -f kube/app/service.yml
   $kd -f kube/app/ingress-internal.yml -f kube/app/networkpolicy-internal.yml
-  $kd -f kube/redis -f kube/app/deployment.yml
+  $kd -f kube/redis -f kube/file-vault -f kube/app/deployment.yml
 fi
 
 sleep $READY_FOR_TEST_DELAY
