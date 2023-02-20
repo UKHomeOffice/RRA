@@ -2,11 +2,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  {{ if eq .KUBE_NAMESPACE .PROD_ENV }}
+  name: {{ .APP_NAME }}
+  {{ else if eq .KUBE_NAMESPACE .BRANCH_ENV }}
   annotations:
     downscaler/uptime: {{ .NON_PROD_AVAILABILITY }}
   name: {{ .APP_NAME }}-{{ .DRONE_SOURCE_BRANCH }}
+  {{ else }}
+  annotations:
+    downscaler/uptime: {{ .NON_PROD_AVAILABILITY }}
+  name: {{ .APP_NAME }}
+  {{ end }}
 spec:
+  {{ if or (eq .KUBE_NAMESPACE .STG_ENV) (eq .KUBE_NAMESPACE .PROD_ENV) }}
+  replicas: 2
+  {{ else }}
   replicas: 1
+  {{ end }}
   selector:
     matchLabels:
       {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
