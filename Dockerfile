@@ -2,7 +2,6 @@ FROM node:14-alpine@sha256:5c33bc6f021453ae2e393e6e20650a4df0a4737b1882d389f1706
 
 USER root
 
-# Update packages as a result of Anchore security vulnerability checks
 RUN apk update && \
     apk add --upgrade gnutls binutils nodejs nodejs-npm apk-tools libjpeg-turbo libcurl libx11 libxml2
 
