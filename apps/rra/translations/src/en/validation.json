@@ -97,7 +97,6 @@
   "currentLevel": {
     "required": "Please select your current proficiency level",
     "notSameOrLower": "The proficiency level must not be the same or lower than your current proficiency level"
-
   },
   "lastAssessmentDate": {
     "default": "Enter the date of your last assessment in the correct format; for example, 31 10 1990",
@@ -108,6 +107,16 @@
   "previousScore": {
     "required": "Please enter the score achieved in your last assessment",
     "numeric": "Please enter your score in digits"
+  },
+  "higherGrouping": {
+    "required": "Please select an RRA group"
+  },
+  "higherGrade": {
+    "required": "Please select a grade"
+  },
+  "higherLevels": {
+    "required": "Please select the proficiency level you are applying for",
+    "notSameOrLower": "The proficiency level must not be the same or lower than your current proficiency level"
   },
   "higherSkill1": {
     "required": "Please select a skill"
